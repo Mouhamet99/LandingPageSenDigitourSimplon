@@ -26,7 +26,7 @@ pantheon.upstream.yml
 ############
 *.7z
 *.dmg
-*.gz
+#*.gz
 *.bz2
 *.iso
 *.jar
