@@ -1,0 +1,74 @@
+/* Forms
+	--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] 
+	@extend .btn
+	@extend .btn-primary
+	@extend .btn-lg
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea 
+	color: $text-gray
+	border: 1px solid $border-color
+	+border-radius(5px)
+	padding: 5px 10px
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus 
+	color: $color-black
+
+
+select 
+	border: 1px solid $border-color
+.select	
+	@extend %relative
+	select
+		-webkit-appearance: none
+		-moz-appearance: window
+	&:after
+		position: absolute
+		content: ""
+		color: $text-gray
+		right: 15px
+		top: 16px
+		pointer-events: none
+		background-image: url('data:image/svg+xml utf-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%234A545A" d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z"></path></svg>')
+		background-repeat: no-repeat
+		background-position: center
+		width: 12px
+		height: 14px 
+
+textarea 
+	width: 100%
+	max-height: 150px

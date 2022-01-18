@@ -1,0 +1,54 @@
+.blog
+    @extend %primary-font-education
+    .row 
+        row-gap: 30px
+        +laptop
+            row-gap: 50px
+    .home &
+        @extend .spacing
+    .post 
+        @extend .col
+        @extend .display-flex
+        +tablet 
+            width: 50%
+            flex: 0 0 50%
+        +desktop-mini 
+            width: 33.33%
+            flex: 0 0 33.33%
+    &__card
+        +box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+        +border-radius(5px)
+        width: 100%
+    &__img 
+        margin: 0
+        img 
+            width: 100%
+            +border-radius(5px 5px 0 0)
+    &__info 
+        padding: 20px
+        +tablet
+            padding: 35px
+    &-category
+        margin-bottom: 10px
+        +tablet 
+            margin-bottom: 14px
+        +laptop
+            margin-bottom: 17px
+    &__title 
+        font-size: 1.22rem
+        line-height: 1.89rem
+        @extend %medium 
+        @extend %primary-font-education
+        margin: 0 0 20px
+        +transition(all 0.3s ease)
+        a 
+            color: $color-black
+        &:hover 
+            color: var(--ecp-primary-color-education)
+    &__bottom 
+        @extend .display-flex
+        +justify-content(space-between)
+        font-size: 14px
+        color: $color-black
+    &__date 
+        color: $color-black

@@ -1,0 +1,65 @@
+.author-section 
+    margin: 50px 0 0
+
+    .author-wrapper 
+        @extend .display-flex
+        padding: 20px
+        +align-items(start)
+        background: #FCFCFC
+        +box-shadow( 0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+        +mobile 
+            +flex-wrap(wrap)
+            
+        +desktop-mini
+            padding: 35px
+        .author-img 
+            width: 80px
+            height: 80px
+            min-width: 80px
+            +border-radius(50%)
+            overflow: hidden
+            margin: 0
+            +tablet 
+                width: 100px
+                height: 100px
+                min-width: 100px
+            +laptop 
+                width: 135px
+                height: 135px
+                min-width: 135px
+            img 
+                width: 100%
+                height: 100%
+
+
+        .author-wrap
+            +tablet
+                padding-left: 20px 
+            +desktop-mini
+                padding-left: 40px
+
+            .author-name 
+                font-size: 1.44rem
+                padding-bottom: 7px
+                @extend %medium
+            .author-content 
+                color: $text-gray
+                font-size: 0.89rem
+            p 
+                line-height: 1.75
+                margin-bottom: 20px
+
+        //end of author content
+
+        .author-social 
+        ul 
+
+            li 
+                a 
+                    transition: 0.2s ease all
+                    svg
+                        fill: $text-gray
+                        &:hover 
+                            fill: var(--ecp-secondary-color-education)			
+//end of social
+//end of author section

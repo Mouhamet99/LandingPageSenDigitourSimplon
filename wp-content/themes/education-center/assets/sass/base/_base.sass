@@ -1,0 +1,83 @@
+@import 'theme-info'
+@import '../utils/global'
+@import 'normalize'
+@import 'typography'
+@import 'reset'
+
+
+* 
+    -webkit-tap-highlight-color: transparent
+
+// width
+.w
+    &-100
+        width: 100%
+.spacing
+    padding: 20px 0
+    +tablet
+        padding: 25px 0
+    +desktop-mini
+        padding: 35px 0
+    +laptop
+        padding: 50px 0
+a
+    color: var(--ecp-primary-color-education)
+    text-decoration: none
+    +transition(0.5s ease)
+    .training &
+        color: var(--ecp-primary-color-training)
+    &:hover
+        text-decoration: none
+        color: var(--ecp-secondary-color-education)
+        .training &
+            color: var(--ecp-secondary-color-training)
+*, ::after, ::before 
+    box-sizing: border-box
+
+.container,
+.container-fluid
+    max-width: 540px
+    width: 100%
+    padding-right: 15px
+    padding-left: 15px
+    margin-right: auto
+    margin-left: auto
+    +laptop
+        padding-right: 25px
+        padding-left: 25px
+    +tablet
+        max-width: 750px
+    +desktop-mini
+        max-width: 960px
+    +laptop
+        max-width: 1170px
+    +fullhd
+        max-width: 1470px
+.row
+    @extend %display-flex
+    +flex-wrap(wrap)
+    margin-left: -15px
+    margin-right: -15px
+    +laptop
+        margin-left: -25px
+        margin-right: -25px
+.align-items-center
+    +align-items(center)
+.col
+    @extend %relative
+    width: 100%
+    -ms-flex-preferred-size: 0
+    flex-basis: 0
+    -ms-flex-positive: 1
+    flex-grow: 1
+    max-width: 100%
+    padding-right: 15px
+    padding-left: 15px
+    +laptop
+        padding-right: 25px
+        padding-left: 25px
+    +mobile 
+        flex: 0 0 100%
+
+.mb-0 
+    margin-bottom: 0

@@ -1,0 +1,260 @@
+.category-list
+    margin: 0 -5px
+    
+.category-list a,.tutor-course-loop-level 
+    font-size: 14px
+    @extend %primary-font-education
+    background-color: var(--ecp-primary-color-education)
+    color: $color-white
+    padding: 9px 10px
+    +border-radius(5px)
+    margin: 5px
+    line-height: 1
+    display: inline-block
+    @extend %medium 
+    @extend %capitalise
+    &:hover 
+        color: $color-white
+        background: var(--ecp-secondary-color-education)
+        
+.blog-category, .f-info
+    .category-list
+        a
+            padding: 0 5px
+            color: var(--ecp-primary-color-education)
+            background: transparent
+            line-height: 1.11rem
+            &:hover 
+                color: var(--ecp-secondary-color-education)
+            
+.list-disc 
+    @extend %relative
+    padding-left: 20px
+    +desktop-mini
+        padding-left: 25px
+    &:not(:last-child) 
+        margin-bottom: 15px
+        +desktop-mini
+            margin-bottom: 20px
+
+    &::before
+        @extend %absolute
+        @extend %content
+        left: 0
+        +border-radius(50%)
+        top: 10px
+        background: var(--ecp-primary-color-education)
+        height: 8px 
+        width: 8px
+        +tablet 
+            top: 12px
+
+.navigation.pagination 
+    text-align: center
+    margin-top: 30px
+    +desktop-mini
+        margin-top: 50px
+
+    .page-numbers 
+        @extend %relative
+        height: 38px
+        width: 38px
+        background-color: $color-white
+        color: $color-black
+        display: inline-block
+        margin: 0 3px
+        line-height: 38px
+        border-radius: 50%
+        transition: 0.3s ease all
+        +box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+        &.next,
+        &.prev 
+            text-indent: -9999px
+
+        &:hover,
+        &.current 
+            color: $color-white
+            background-color: var(--ecp-primary-color-education)
+            &.next::after,
+            &.prev::after  
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8H15.8571' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.35742 1.5L15.8574 8L9.35742 14.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+            &.prev::after 
+                transform: rotate(-180deg)
+        &.next::after,
+        &.prev::after 
+            @extend %absolute
+            @extend %content
+            height: 10px
+            width: 10px
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.07227 8H15.9294' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.42969 1.5L15.9297 8L9.42969 14.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        //nextandbefore
+
+        &.prev::after 
+            transform: rotate(-180deg)
+            left: 40%
+            top: 44%
+            
+
+.post-navigation 
+    margin: 10px 0 40px
+    +tablet 
+        margin: 30px 0 50px
+    +desktop-mini
+        margin: 50px 0 70px
+    +laptop
+        margin: 50px 0 100px
+    .meta-nav 
+        font-size: 0.889em
+        font-weight: 500
+        line-height: 1.75
+        color: var(--ecp-primary-color-education)
+        cursor: pointer
+        max-width: auto
+        max-height: auto
+    &.pagination 
+        .nav-links 
+            @extend .display-flex
+            +align-items(start)
+            +justify-content(space-between)
+            
+            a 
+                color: var(--ecp-primary-color-education)
+            .post-thumbnail 
+                height: 50px
+                +flex(0 0 50px)
+                margin: 0
+                +desktop-mini
+                    height: 60px
+                    +flex(0 0 60px)
+
+                +laptop
+                    height: 80px
+                    +flex(0 0 80px)
+                img,
+                svg rect 
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+            .nav-next,
+            .nav-previous 
+                width: 43%
+                +mobile 
+                    width: 100%
+                
+                .meta-nav 
+                    position: relative
+                    display: inline
+
+                    &:hover 
+                        color: var(--ecp-secondary-color-education)
+                        &::after 
+                            width: 80px
+                a 
+                    &:hover 
+                        .entry-header 
+                            .entry-title 
+                                color: var(--ecp-primary-color-education)
+                //navprevandnavnext
+            .nav-previous,
+            .post 
+                @extend .display-flex
+                +align-items(center)
+                +mobile 
+                    flex-wrap: wrap
+                    padding-right: 20px
+                img,
+                svg 
+                    +border-radius(50%)
+                
+            .nav-next 
+                text-align: right
+                float: right
+                margin-left: auto
+                +mobile 
+                    float: unset
+                    width: 100%
+                    padding-left: 20px
+                .post 
+                    +flex-direction(row-reverse)	
+            
+            .pagination-details 
+                @extend .display-flex
+                +flex-direction(column)
+                padding: 32px 19px 26px
+                +mobile 
+                    padding: 0
+                    width: 100%
+
+                .entry-header 
+                    position: unset
+
+                    .entry-title 
+                        margin: 0
+                        font-weight: 400
+                        font-size: 0.89rem
+                        line-height: 28px
+                    
+                //entryheader
+            //pagination details
+
+            
+
+.navigation .nav-links 
+    text-align: center
+    margin-top: 40px
+    margin-bottom: 30px
+    .nav-next a,
+    .nav-previous a 
+    color: #fff
+    border-radius: 11px
+    padding: 18px 35.5px
+    @extend %primary-font-education
+    font-size: 1em
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+
+    &:hover 
+        color: var(--ecp-primary-color-education)
+        background: transparent
+		
+.load-more
+    @extend .text-center
+    margin-top: 30px
+    +desktop-mini   
+        margin-top: 50px
+
+
+.grid-layout
+    &.layout-item-3
+        .row
+            row-gap: 30px
+            +laptop  
+                row-gap: 50px
+            .col,.p-wrap
+                @extend .col 
+                +tablet
+                    -ms-flex: 0 0 50%
+                    flex: 0 0 50%
+                    max-width: 50%
+                    +desktop-mini
+                        -ms-flex: 0 0 33.333333%
+                        flex: 0 0 33.333333%
+                        max-width: 33.333333%     
+    &.layout-item-2
+        .row 
+            row-gap: 30px
+            +laptop  
+                row-gap: 50px
+            .col,.p-wrap 
+                @extend .col
+                +tablet
+                    -ms-flex: 0 0 50%
+                    flex: 0 0 50%
+                    max-width: 50%

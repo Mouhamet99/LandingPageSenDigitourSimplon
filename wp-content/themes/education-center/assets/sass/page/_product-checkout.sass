@@ -1,0 +1,343 @@
+.woocommerce 
+    ul 
+        li 
+            &:before 
+                display: none
+    div.product 
+        form.cart 
+            .group_table 
+                tr 
+                    border: none
+                td 
+                    vertical-align: middle
+            table 
+                td 
+                    padding-left: 15px
+    table.shop_attributes 
+        td,th
+            padding: 10px 15px
+    &-error 
+        margin-left: 0
+    &-error, &-info, &-message
+        paddong: 1em 2em
+.woocommerce-checkout
+
+    li
+        &::before
+            content: none !important
+        
+    
+    .page-title
+        @extend %primary-font-education
+        @extend %medium
+        line-height: 1.2
+        font-size: 1.78rem
+        +tablet 
+            font-size: 2.11rem
+        
+    
+
+    .woocommerce-form-coupon-toggle
+        .woocommerce-info
+            @extend %primary-font-education
+            font-size: 1rem
+            font-style: italic
+            color: $text-gray
+            @extend .text-center
+            border: 0
+            background-color: unset
+
+            &::before
+                content: none
+                display: none
+            
+
+            a
+                color: var(--ecp-primary-color-education)
+                text-decoration: underline
+
+                &:hover
+                    color: var(--glt-secondary-color)
+                    text-decoration: none
+                
+            
+        
+
+        // woocommerce-info
+    //cupontoggle
+
+    form.checkout_coupon
+        max-width: 800px
+        margin-top: 0
+        @extend .text-center
+        border-radius: 0
+        background: rgba(0, 0, 0, 0.02)
+        border-color: rgba(0, 0, 0, 0.05)
+        border: 1px solid $border-color
+        padding: 20px
+        margin: 2em auto
+        @extend %primary-font-education
+
+        p
+            margin-bottom: 0
+            font-size: 0.89rem
+        
+
+        .form-row
+            margin: 20px 0
+            float: none
+            display: inline-block
+
+            &.form-row-first
+                @extend .text-right
+                width: 45%
+
+                input
+                    color: $text-gray
+                    border: 1px solid $border-color
+                    +border-radius(5px)
+                    padding: 12px
+                    height: 100%
+                    width: 100%
+                    height: 49px
+                    +desktop-mini
+                        height: 55px
+                    +laptop
+                        height: 60px
+                
+            
+
+            &.form-row-last
+                @extend .text-left
+                width: auto
+
+                button
+                    margin-top: -5px
+                    @extend .btn 
+                    @extend .btn-lg 
+                    @extend .btn-primary
+                    
+                
+            //formrowlast
+
+            .checkout-form-wrapper
+                margin: 1.2em 0
+                @extend %flexbox
+                @include justify-content(center)
+            
+
+            //end of button
+        
+
+        //checkout form wrapper
+    //checkout form
+
+    .checkout.woocommerce-checkout
+        #customer_details
+            .col-1
+                h3
+                    @extend %primary-font-education
+                    font-size: 2.11rem
+                    line-height: 1.2
+                    @extend %medium
+                    
+                //h3
+
+                .woocommerce-billing-fields__field-wrapper
+                    .form-row
+                        margin-bottom: 20px
+                        &.form-row-first
+                            width: 100%
+                            +tablet
+                                width: 50%
+                                padding-right: 10px
+                        
+                        &.form-row-last
+                            width: 100%
+                            +tablet
+                                width: 50%
+                                padding-left: 20px
+                        
+
+                        label
+                            font-size: 1rem
+                            color: $color-black
+                        input
+                            width: 100%
+                            font-size: 1rem
+                            border: 1px solid $border-color
+                            background-color: transparent
+                            color: $text-gray
+                            +border-radius(5px)
+                            padding: 12px 20px
+                            +desktop-mini 
+                                padding: 15px 20px
+                            +laptop 
+                                padding: 17.5px 20px
+                        
+                        //select
+                        .select2-container--default .select2-selection--single
+                            background-color: transparent
+                            border: 1px solid $border-color
+                            color: $text-gray
+                            +border-radius(5px)
+                            height: 49px
+                            +desktop-mini
+                                height: 55px
+                            +laptop
+                                height: 60px
+                        .select2-container--default .select2-selection--single .select2-selection__rendered
+                            line-height: 50px
+                            font-size: 1rem
+                        
+                        .select2-container--default .select2-selection--single .select2-selection__arrow
+                            top: 13px
+                        
+
+                        ::placeholder
+                            font-size: 1rem
+                        
+                    
+                
+            //col1
+
+            .col-2
+                .woocommerce-additional-fields
+                    .form-row
+                        label
+                            font-size: 1rem 
+                            color: $color-black
+                        
+
+                        .woocommerce-input-wrapper
+                            #order_comments
+                                height: 125px
+                                width: 100%
+                                font-size: 1rem
+                                border: 1px solid $border-color
+                                background-color: transparent
+                                color: $text-gray
+                                +border-radius(5px)
+                                padding: 12px 20px
+                                +desktop-mini 
+                                    padding: 15px 20px
+                                +laptop 
+                                    padding: 17.5px 20px
+                            
+                        
+                    //formrow
+                
+            //col2
+        //customerdetails
+    
+
+    #order_review_heading,.woocommerce-additional-fields h3
+        @extend %primary-font-education
+        line-height: 1.2
+        @extend %medium
+        font-size: 1.78rem
+        +tablet 
+            font-size: 2.11rem
+        
+    //ordertitle
+
+    //woocommerce checkout form
+    .woocommerce-checkout-review-order
+        table
+            border: 0
+            tr.cart_item,
+            tr.cart-subtotal,
+            tr.cart-subtotal th ,
+            tr.cart-subtotal td,
+            tr.order-total,
+            tr.order-total th ,tr.order-total td
+                background-color: unset !important
+                border: none
+                border-bottom: 1px solid $border-color !important
+            th
+                font-size: 1rem !important
+                padding: 16px 20px !important
+            
+            td
+                padding: 16px 20px !important
+
+            tr.cart-subtotal td,tr.order-total td
+                text-align: right
+            
+
+            thead
+                .product-total
+                    @extend .text-right
+                
+            //thead
+        
+
+        //thead
+        tbody
+            .product-total
+                @extend .text-right
+            
+
+            .product-total
+                span
+                    color: #58595B
+                
+            
+        //tbody
+
+            tfoot
+                th
+                    border: 0
+                    @extend %primary-font-education
+                    @extend %medium 
+               
+                td
+                    @extend .text-right
+                    color: $color-black
+                    @extend %medium 
+               
+                .woocommerce-Price-amount.amount
+                    @extend .text-right
+               
+                .order-total
+                    strong
+                        font-weight: 600
+                        font-size: 1.33rem
+                   
+               
+           
+        //tfoot
+    //ordertable
+
+    #payment.woocommerce-checkout-payment
+        background: none
+        .wc_payment_methods
+            border: 0
+            padding: 0
+
+            li
+                border-top: 3px solid var(--ecp-primary-color-education)
+                padding: 20px
+            //li
+        //ul
+
+        .form-row.place-order
+           padding: 20px 0
+
+           p
+               @extend %primary-font-education
+               font-size: 1rem
+               line-height: 1.7778
+               color: $text-gray
+           
+           #place_order.button.alt
+               float: left
+               @extend .btn 
+               @extend .btn-lg 
+               @extend .btn-primary 
+
+//woocommerce-checkout
+
+//Select2 css 
+.select2-results__option[aria-selected], .select2-results__option[data-selected],.select2-dropdown, .select2-container--default .select2-search--dropdown .select2-search__field
+    border-color: $border-color

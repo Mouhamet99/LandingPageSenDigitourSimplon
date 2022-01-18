@@ -1,0 +1,77 @@
+//education
+.banner-boxes 
+    z-index: 1
+    @extend %relative
+    +tablet-max 
+        padding: 50px 0 25px 0
+    +mobile
+        padding: 20px 0
+    +desktop-mini
+        padding-bottom: 50px
+    
+    [class*="col-"],.col
+        @extend .display-flex
+        +mobile 
+            width: 100%
+        &:last-child 
+            +tablet-max
+                .icon-box
+                    margin-bottom: 0 
+    .icon
+        &-box  
+            width: 100%
+            padding: 20px
+            +box-shadow(0 0 7px 1px rgba(75, 131, 252, 0.15))
+            +border-radius(5px)
+            +transition(all ease 0.5s)
+            background: $color-white
+            @extend .display-flex
+            +flex-direction(column)
+            +tablet
+                padding: 30px
+            +desktop-mini
+                margin-top: -50px 
+            +laptop
+                padding: 50px
+                margin-top: -130px  
+            +mobile
+                margin-bottom: 30px 
+            &:hover 
+                +box-shadow(0 0 7px 1px rgba(75, 131, 252, 0.25))
+        &-wrap
+            margin-bottom: 20px
+            
+            +laptop
+                margin-bottom: 30px
+            img 
+                max-width: 60px
+                max-height: 50px
+                object-fit: contain
+                +tablet
+                    max-width: 71px
+                    max-height: 60px
+        &-text 
+            h2 
+                font-size: 1.44rem
+                line-height: 2rem
+                @extend %medium 
+                margin-bottom: 15px 
+            p 
+                margin-bottom: 0
+    [class^="icon-"], [class*=" icon-"]
+        p 
+            @extend %primary-font-education
+            line-height: 1.778
+
+    &.no-banner 
+        padding: 20px 0
+        +tablet
+            padding: 25px 0
+        +desktop-mini
+            padding: 35px 0
+        +laptop
+            padding: 50px 0
+        .icon
+            &-box  
+                +tablet 
+                    margin: 0

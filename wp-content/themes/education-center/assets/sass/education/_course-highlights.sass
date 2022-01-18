@@ -1,0 +1,54 @@
+.course-highlights 
+    @extend .spacing
+    &__wrap
+        @extend .display-flex
+        +flex-wrap(wrap)
+        +align-items(center)
+        background: rgba(55, 126, 249, 0.06)
+    &__img
+        flex: 0 0 100% 
+        +desktop-mini
+            flex: 1 0 50%
+        img
+            width: 100%
+            object-fit: cover
+    &__info
+        padding: 30px
+        flex: 0 0 100%
+        +desktop-mini
+            padding: 50px
+            flex: 1 0 50%
+        ul 
+            margin: 0
+            li 
+                margin-bottom: 30px
+                &:last-child 
+                    margin-bottom: 0
+
+.box-flex 
+    @extend .display-flex
+    +mobile 
+        display: block
+    &__icon 
+        min-width: 50px
+        max-width: 50px
+        max-height: 50px 
+        margin-right: 25px
+        +tablet
+            min-width: 60px
+            max-width: 60px
+            max-height: 60px 
+        +laptop
+            max-width: 80px
+            max-height: 80px 
+            min-width: 80px
+        +mobile
+            margin: 0 0 10px
+    &__text 
+        h3 
+            font-size: 1.22rem
+            @extend %medium
+            line-height: 34px
+            margin-bottom: 10px
+        p 
+            margin-bottom: 0

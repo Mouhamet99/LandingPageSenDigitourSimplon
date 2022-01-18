@@ -1,0 +1,70 @@
+.text
+    &-left
+        text-align: left
+    &-center
+        text-align: center
+    &-right 
+        text-align: right
+    //font-weight 
+    &-bolder
+        font-weight: 800
+    &-bold
+        font-weight: 700
+    &-sbold
+        font-weight: 600
+    &-medium
+        font-weight: 500
+    &-regular
+        font-weight: 400
+    &-light
+        font-weight: 300
+.h1, h1
+    line-height: 1.36 //60px
+    font-size: 2.44rem //44px
+.h2, h2
+    line-height: 48px //48px
+    font-size: 2.11rem //38px
+    
+    .training &
+        line-height: 1.38 /50px
+        font-size: 2rem //36px
+.h3, h3
+    line-height: 1.5 //36px
+    font-size: 1.33rem //24px 
+    .training &
+        font-size: 1.33rem //24px
+.h4, h4
+    line-height: 1.7 //34px
+    font-size: 1.22rem //22px
+    .training &
+        font-size: 1.11rem //20px
+.h5, h5
+    line-height: 1.77 //32px
+    font-size: 1rem //18px
+.h6,h6
+    line-height: 1
+    font-size: 0.78rem //14px
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    color: $color-black
+    @extend %primary-font-education
+    @extend %medium
+    .training &
+        @extend %primary-font-training
+        
+
+
+
+
+        

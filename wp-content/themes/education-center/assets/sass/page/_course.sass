@@ -1,0 +1,381 @@
+.tutor 
+    &-container 
+        @extend .container
+        padding-top: 20px
+        +tablet
+            padding-top: 25px
+        +desktop-mini
+            padding-top: 35px
+        +laptop
+            padding-top: 50px
+    &-courses,&-row
+        @extend .row 
+        div[class*="tutor-course-col"]
+            padding-left: 15px
+            padding-right: 15px
+            margin-bottom: 30px
+            +laptop
+                padding-left: 25px
+                padding-right: 25px
+                margin-bottom: 50px
+        .tutor-col-8 ,.tutor-col-4
+            padding-left: 15px
+            padding-right: 15px
+            +laptop
+                padding-left: 25px
+                padding-right: 25px
+        .tutor-course-col-6, .tutor-course-col-5, .tutor-course-col-4, .tutor-course-col-3, .tutor-course-col-2 
+            width: 100%
+            +tablet 
+                width: 50%
+            +desktop-mini 
+                width: 33.33%
+
+        .tutor-course-col-6
+            +desktop-mini 
+                width: 50%
+        .tutor-course-col-4 
+            +desktop-mini 
+                width: 25%
+        .tutor-course-loop-meta
+            margin-bottom: 10px
+    &-rating-count,&-single-rating-count
+        color: $text-gray
+        font-size: 14px
+    &-loop-author 
+        margin-bottom: 10px
+        @extend .display-flex 
+        +align-items(center)
+        +flex-wrap(wrap)
+        row-gap: 10px
+    &-course
+        &-filter-wrap   
+            margin-bottom: 40px 
+            +tablet 
+                margin-bottom: 50px
+        &-archive-results-wrap
+            font-size: 14px 
+            color: $color-black
+        &-archive-filters-wrap 
+            +mobile-sm-max 
+                width: 100%
+                margin-top: 10px
+
+        &-filter-form
+            select,.tutor-course-filter-wrapper > div:last-child select[name="tutor_course_filter"]
+                background: $gray-100 !important
+                font-size: 14px !important
+                border: 1px solid $gray-100 !important
+                border-radius: 5px !important
+                padding: 10px 20px !important
+                color: $color-black !important
+        &-loop-header-meta
+            top: 30px
+            padding-left: 30px
+            padding-right: 30px
+        &-loop-header-meta .tutor-course-wishlist
+            padding: 10px 5px
+            border-radius: 5px
+        &-container
+            padding: 35px
+            border-bottom: 1px solid $border-color
+        &-loop-title 
+            h2
+                font-size: 1.22rem 
+                margin-bottom: 10px
+                @extend %medium
+                a 
+                    color: $color-black 
+        &-loop-meta
+            color: $text-gray
+            font-size: 0.89rem
+            margin-bottom: 18px
+        &-header-h1
+            color: $color-black
+            margin-bottom: 20px
+            line-height: 1.35
+            font-size: 1.78rem
+            +tablet
+                font-size: 2.11rem
+    &-loop-author,&-single-course-meta       
+        ul 
+            line-height: 2.22rem
+            li 
+                span, &.tutor-course-level strong
+                    color: $text-gray  
+                    @extend %medium 
+                &.tutor-course-level
+                    color: $color-black 
+                    font-weight: 600 !important
+
+        .tutor-single-course-author-name
+            a 
+                font-size: 1rem 
+                color: $color-black
+                @extend %capitalise
+                font-weight: 500 !important
+        .tutor-single-course-author-meta
+            vertical-align: middle
+            .tutor-single-course-author-name
+                a 
+                    color: $text-gray  
+                    @extend %medium 
+        .tutor-single-course-avatar 
+            .tutor-text-avatar,.tutor-image-avatar
+                width: 40px 
+                height: 40px
+                line-height: 40px
+    
+    &-loop-course-footer
+        padding: 20px
+        +tablet 
+            padding: 25px 35px
+        .tutor-course-loop-price
+            color: $color-black
+    &-public-course-start-learning
+        a
+            @extend .btn
+            @extend .btn-primary
+            @extend .btn-sm
+    &-wrap
+        color: $text-gray 
+    &-single-course-meta ul li.tutor-social-share
+        +mobile 
+            float: left
+        +mobile-sm-max 
+            float: none
+        span 
+            color: $color-black !important
+        .tutor-social-share-wrap 
+            button 
+                color: $text-gray !important
+                padding: 0 10px !important
+        
+.tutor-single-course-meta.tutor-meta-top ul li, .tutor-single-course-meta.tutor-meta-top ul li a
+    font-weight: 500 
+    color: $color-black
+
+.tutor-single-course-meta.tutor-lead-meta
+    margin: 20px 0
+    +tablet
+        margin: 30px 0
+    +desktop-mini
+        margin: 50px 0
+    +mobile-sm-max 
+        display: bloack
+    ul
+        padding: 20px 0
+        li
+            font-size: 1rem
+            color: $color-black
+            span 
+                color: $text-gray
+            a 
+                color: $color-black
+
+.tutor-custom-list-style li
+    margin-bottom: 20px
+    @extend .list-disc
+.tutor-segment-title, .tutor-single-course-segment .tutor-segment-title
+    color: $color-black
+    font-size: 1.22rem
+    +desktop-mini
+        font-size: 1.44rem
+
+.tutor-course-topics-contents .tutor-course-title h4,.tutor-course-lesson h5 i 
+    color: $text-gray
+    i 
+        float: right 
+        color: $text-gray
+.instructor-avatar .tutor-text-avatar
+    height: 80px
+    width: 80px
+    line-height: 80px
+        
+.single-instructor-wrap .single-instructor-bottom .ratings .rating-total-meta,.ratings
+    color: $text-gray
+    font-size: 14px
+.tutor-text-mute,.single-instructor-bottom
+    font-size: 0.89rem
+    @extend %medium
+    color: $text-gray
+.single-instructor-bottom
+    @extend .display-flex
+    +flex-wrap(wrap)
+    row-gap: 15px
+    +align-items(center)
+
+.course-avg-rating-wrap .course-avg-rating 
+    font-size: 3.28rem 
+    color: $color-black
+    margin-bottom: 20px
+    +tablet 
+        font-size: 4.28rem 
+.tutor-review-individual-item,.tutor-course-reviews-wrap,.single-instructor-wrap .single-instructor-top,.single-instructor-wrap,.tutor-course-topics-contents .tutor-course-topic,.tutor-course-lesson
+    border-color: $border-color
+
+.tutor-course-reviews-wrap,.single-instructor-wrap ,.tutor-course-topics-contents .tutor-course-topic
+    +border-radius(5px)
+
+.tutor-price-box-thumbnail
+    margin: 0
+    padding-bottom: 20px
+.course-avg-rating-wrap
+    padding: 20px 30px 20px 40px
+    +mobile
+        padding: 20px
+.tutor-review-individual-item
+    padding: 20px
+    +tablet 
+        padding: 30px 25px
+.tutor-single-course-sidebar
+    .tutor-price-preview-box,.tutor-single-course-segment
+        padding: 20px
+        border: 1px solid $border-color
+        +border-radius(5px)
+        +tablet 
+            padding: 30px 25px
+        .price
+            color: var(--ecp-primary-color-education)
+            @extend %medium
+            line-height: 1.35
+            font-size: 1.78rem
+            +tablet
+                font-size: 2.11rem
+.tutor-segment-title, .tutor-single-course-segment .tutor-segment-title
+    font-size: 1.22rem 
+    @extend %medium
+    margin-bottom: 25px
+
+.single_add_to_cart_button, .tutor-button, .tutor-btn
+    @extend .btn
+    @extend .btn-lg 
+    @extend .btn-primary
+
+.tutor-single-course-segment.tutor-course-material-includes-wrap
+    padding: 0
+    border: none
+
+.tutor-single-course-segment
+    margin-bottom: 20px
+    +tablet
+        margin-bottom: 25px
+    +desktop-mini
+        margin-bottom: 35px
+    +laptop
+        margin-bottom: 50px
+.tutor-loop-course-container
+    padding: 20px
+    +tablet 
+        padding: 25px 35px
+.single-courses 
+    .tutor 
+        &-row
+            .tutor-col-6, .tutor-col-5, .tutor-col-4, .tutor-col-3, .tutor-col-2 
+                +tablet-max
+                    flex: 0 0 100%
+                    max-width: 100%
+
+.tutor-course-benefits-content ul
+    +mobile
+        column-count: 1
+
+.tutor-single-course-meta ul li
+    +mobile 
+        float: left
+    +mobile-sm-max
+        float: none
+
+
+//Tutor lms dashboard css 
+.tutor-dashboard .tutor-dashboard-content .tutor-dashboard-info-cards .tutor-dashboard-info-card
+    min-width: 100%
+    +mobile-sm 
+        min-width: 50%
+    +tablet 
+        min-width: 33.33%
+
+
+//Course archivve page with filter design
+.tutor-course-filter-wrapper 
+    overflow: hidden
+    max-width: 540px !important
+    width: 100%
+    padding-right: 15px
+    padding-left: 15px
+    padding-top: 20px
+    +tablet
+        max-width: 750px !important
+        padding-top: 25px
+    +desktop-mini
+        max-width: 960px !important
+        padding-top: 35px
+    +laptop
+        max-width: 1170px !important
+        padding-top: 50px
+    +fullhd
+        max-width: 1470px !important
+    > div
+        padding: 0
+        &:first-child
+            padding: 0
+            h4
+                @extend %semi-bold
+.tutor-course-filter-loop-container 
+    padding: 0 0 20px 30px
+    +tablet
+        margin-bottom: 0
+        padding: 0 0 0 30px
+    .tutor-courses
+        .tutor-course-col-3  
+            +tablet 
+                width: 100%
+            +desktop-mini
+                width: 50%
+@media screen and (max-width: 767px)
+    .tutor-course-filter-loop-container
+        padding: 30px 0 0 0
+.single-instructor-wrap .single-instructor-bottom .courses
+    margin-left: 0
+    margin-right: 20px
+.single-instructor-wrap .single-instructor-bottom .students
+    margin-left: 0
+.single-instructor-wrap .single-instructor-bottom .ratings
+    margin-right: 20px
+
+//Admin profile page 
+
+.tutor-user-public-profile 
+    width: 100% !important
+    flex: 0 0 100% !important
+    +flex-wrap(wrap)
+    .photo-area 
+        margin-top: 0
+        .pp-area 
+            top: -200px
+    .tutor-course 
+        margin-bottom: 0
+    .tutor-user-profile-content
+        margin-bottom: 0
+    .tutor-courses 
+        row-gap: 0
+        div[class*="tutor-course-col"]
+            width: 100%
+            +desktop-mini
+                width: 50%
+            +fullhd 
+                width: 33.33%
+    .tutor-user-profile-content
+        h3 
+            margin-bottom: 20px
+            @extend %semi-bold
+.tutor-course-filter-wrapper .tutor-course-filter-container > form > div
+    +mobile 
+        width: 100%
+
+.single-instructor-wrap .tutor-instructor-left
+    @extend .display-flex
+    +align-items(center)
+
+.tutor-course-filter-wrapper > div:first-child .tutor-course-search-field i 
+    color: #000

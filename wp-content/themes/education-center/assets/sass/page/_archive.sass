@@ -1,0 +1,37 @@
+.archive 
+    &.full-width
+        .grid-layout-wrap
+            @extend .spacing
+    
+.full-width,.recent-posts
+    .grid-layout-wrap
+        .row 
+            row-gap: 30px
+            +laptop  
+                row-gap: 50px
+            .post,article
+                @extend .col
+                @extend .display-flex
+                +tablet
+                    -ms-flex: 0 0 50%
+                    flex: 0 0 50%
+                    max-width: 50%
+                +desktop-mini
+                    -ms-flex: 0 0 33.333333%
+                    flex: 0 0 33.333333%
+                    max-width: 33.333333%
+
+                    
+.leftsidebar,.rightsidebar
+    .grid-layout-wrap
+        .row 
+            row-gap: 30px
+            +laptop  
+                row-gap: 50px
+            .post,article
+                @extend .col
+                @extend .display-flex
+                +tablet
+                    -ms-flex: 0 0 50%
+                    flex: 0 0 50%
+                    max-width: 50%

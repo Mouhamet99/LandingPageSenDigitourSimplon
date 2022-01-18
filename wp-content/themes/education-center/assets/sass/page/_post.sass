@@ -1,0 +1,138 @@
+.single 
+    &-post
+        .category 
+            &-wrap 
+                margin: 20px 0
+                +tablet
+                    margin: 50px 0 20px
+        .entry 
+            &-meta 
+                display: inline-flex
+                +align-items(center)
+                margin-bottom: 0
+                +mobile 
+                    +flex-wrap(wrap)
+                    
+                .author-details 
+                    @extend .display-flex 
+                    +align-items(center)
+                span 
+                    @extend .list-disc
+                    margin-bottom: 15px
+                    +desktop-mini
+                        margin-bottom: 20px
+                    .byline 
+                        margin-bottom: 0
+                    &:before 
+                        height: 7px
+                        width: 7px 
+                        top: 50%
+                        +transform(translateY(-50%))
+                        margin-bottom: 0
+                    +mobile 
+                        margin-bottom: 15px
+                        
+                    &:nth-child(1)
+                        padding-left: 0
+                        &:before 
+                            display: none
+                        span 
+                            padding-left: 0
+                            &:before 
+                                display: none
+            &-title
+                margin-bottom: 20px
+                line-height: 1.35
+                font-size: 1.78rem
+                +tablet
+                    font-size: 2.11rem
+                    line-height: 2.67rem
+            &-content
+                blockquote 
+                    margin: 50px 0
+                ul 
+                    li
+                        @extend .list-disc
+        .author-details
+            .avatar 
+                margin-right: 10px
+                +border-radius(50%)
+        
+        
+    .social 
+        &-wrap 
+            @extend .display-flex 
+            +flex-wrap(wrap)
+            +justify-content(space-between) 
+            +align-items(baseline)
+            margin-top: 30px
+            +tablet
+                margin-top: 50px   
+            .social-networks 
+                color: $color-black
+                +tablet 
+                    width: 50%
+                a 
+                    +box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+                    line-height: 0
+
+    .author-section 
+        margin: 40px 0
+        +tablet
+            margin: 50px 0
+    &.full-width 
+        .post-info 
+            @extend .text-center
+            margin-bottom: 30px
+            flex: 0 0 100%
+            width: 100%
+            margin: 0 auto
+            +desktop-mini
+                margin-bottom: 50px
+                flex: 0 0 66.66%
+                width: 66.66%
+            .category-wrap 
+                margin-top: 0
+        .post-content,.post-bottom 
+            flex: 0 0 100%
+            width: 100%
+            margin: 0 auto
+            margin-top: 50px
+            +desktop-mini
+                flex: 0 0 66.66%
+                width: 66.66%
+            .grid-layout-wrap 
+                .row 
+                    .post
+                        +desktop-mini
+                            flex: 0 0 50%
+                            max-width: 50%
+    .post-navigation.pagination .nav-links .pagination-details
+        padding-top: 0
+        padding-bottom: 0
+.related-post 
+    padding-top: 20px
+    +tablet
+        padding-top: 25px
+    +desktop-mini
+        padding-top: 35px
+    +laptop
+        padding-top: 50px
+
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content
+    +mobile 
+        margin-top: 20px
+        grid-column: 1
+        grid-row: 2
+    
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media
+    +mobile
+        grid-column: 1
+        grid-row: 1
+.wp-block-media-text.is-stacked-on-mobile 
+    +mobile
+        grid-template-columns: 100% !important
+    
+.wp-block-media-text  
+    +mobile 
+        margin-bottom: 20px

@@ -1,0 +1,99 @@
+.page 
+    @extend %primary-font-education
+
+    .site-main 
+        .entry-content 
+            margin: 0
+            .post-thumbnail 
+                margin-bottom: 30px
+                +border-radius(5px)
+                +laptop
+                    margin-bottom: 50px
+            .entry-title 
+                @extend %primary-font-education
+                @extend %medium
+                line-height: 1.2
+                margin-top: 0
+                font-size: 1.8rem 
+                +tablet 
+                    font-size: 2.44rem
+                span 
+                    @extend .section-header__info
+                    display: block
+                    margin-bottom: 10px
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 
+                @extend %primary-font-education
+                @extend %medium
+                margin: 20px 0
+                +tablet
+                    margin: 36px 0 32px 0
+            
+            p 
+                margin-bottom: 30px
+                @extend %regular
+                
+            
+            blockquote 
+                margin: 40px 0
+            
+
+            .gallery-wrapper 
+                @extend .display-flex
+                +flex-wrap(wrap)
+                
+                img 
+                    vertical-align: middle
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                
+                +tablet
+                    width: 25%
+                
+                +desktop-mini 
+                    width: 33.333%
+                
+                +laptop
+                    width: 50%
+        ul 
+            li 
+                @extend .list-disc
+.blocks-gallery-grid, .wp-block-gallery 
+    display: flex
+    flex-wrap: wrap
+    list-style-type: none
+    padding: 0 !important
+    margin: 0 !important
+    grid-gap: 30px
+    +laptop
+        grid-gap: 50px
+    .blocks-gallery-item 
+        margin: 0 !important
+        width: 100 !important
+        flex: 0 0 100%
+        padding-left: 0 !important
+        +mobile-sm
+            width: calc(50% - 15px) !important
+            flex: 0 0 calc(50% - 15px)
+        +desktop-mini
+            width: calc(50% - 25px) !important
+            flex: 0 0 calc(50% - 25px)
+        &:before 
+            display: none
+        figure 
+            margin: 0
+            img
+                width: 100%
+        .full-width &
+            +desktop-mini
+                width: calc(32.4% - 25px) !important
+                flex: 0 0 calc(32.4% - 25px)
+            +fullhd 
+                width: calc(32.7% - 25px) !important
+                flex: 0 0 calc(32.7% - 25px)
+

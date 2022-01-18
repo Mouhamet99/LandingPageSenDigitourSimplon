@@ -1,0 +1,157 @@
+
+// Flexbox display
+.display-flex 
+    +display-flex
+
+// Inline flex display
+.display-inline-flex 
+    +display-inline-flex
+
+// sticky element
+.sticky
+    position: -webkit-sticky !important
+    position: -moz-sticky !important
+    position: -ms-sticky !important
+    position: -o-sticky !important
+    position: sticky !important
+    top: 80px
+
+
+// transition-slow
+.transition-slow
+    -webkit-transition: all 0.5s linear
+    -moz-transition: all 0.5s linear
+    -ms-transition: all 0.5s linear
+    -o-transition: all 0.5s linear
+    transition: all 0.5s linear
+
+//rotate
+.rotate
+    &45
+        +transform(rotate(45deg))
+
+// center item
+.item-center
+    +display-inline-flex
+    +justify-content(center)
+    +align-items(center)
+    &-left
+        +display-inline-flex
+        +justify-content(center)
+        +align-items(start)
+        
+//box shadow
+.box
+    &-shadow
+        +box-shadow(0 0 20px 5px rgba($color-black, 0.06))
+
+.absolute-center
+    @extend %absolute
+    top: 50%
+    left: 50%
+    +transform(translate(-50%,-50%))
+
+.check
+    @extend %relative
+    &:after
+        @extend %absolute
+        @extend %content
+        display: block
+        width: 8px
+        height: 16px
+        border: solid var(--ecp-primary-color-education)
+        border-width: 0 2px 2px 0
+        left: -12px
+        top: 11px
+        margin-top: -10px
+        +transform(rotate(45deg))
+
+.times  
+    @extend %relative
+    &:after,
+    &:before
+        @extend %absolute
+        @extend %content
+        top: 5px
+        left: -11px
+        height: 20px
+        width: 2px
+        background-color: $secondary-100
+    &:before
+        +transform(rotate(45deg))
+    &:after
+        +transform(rotate(-45deg))
+.stretched-link
+    &:before
+        @extend %content
+        @extend %absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        pointer-events: auto
+        z-index: 1
+
+        
+// arrow down
+.arrow
+    &-up
+        @extend %relative
+        +transform(rotate(225deg))
+        width: 33px
+        height: 33px
+        .close-btn &
+            width: 27.5px
+            height: 30px
+
+        .hide .close-btn &
+            height: 24px
+        &::after
+            @extend %content
+            top: 45%
+            left: 45%
+            +transform(translate(-50%, -50%))
+            +transition(all 0.2s linear)
+            +angle(up, 10px, 10px, 1px, $color-white)
+            .close-btn &
+                +angle(up, 8px, 8px, 1px, $color-black)
+                left: 48%
+                top: 48%
+    &-down
+        @extend %relative
+        width: 16px
+        &::after
+            @extend %content
+            top: 5px
+            left: 5px
+            +transition(all 0.2s linear)
+            +transform(rotate(225deg))
+            +angle(down, 5px, 5px, 1px, $color-black)
+    &-left
+        @extend %relative
+        width: 16px
+        &::after
+            @extend %content
+            top: 5px
+            left: 5px
+            +transition(all 0.2s linear)
+            +transform(rotate(225deg))
+            +angle(left, 5px, 5px, 1px, $color-black)
+
+
+    &-right
+        @extend %relative
+        width: 16px
+        &::after
+            @extend %content
+            top: 9px
+            left: 7px
+            +transition(all 0.2s linear)
+            +transform(rotate(135deg))
+            +angle(down, 6px, 6px, 1px, $color-black)
+    &-fill
+        &-right
+            @extend %relative
+            width: 16px
+            &:after
+                +caret(right, 13px, 12px, var(--ecp-primary-color-education))

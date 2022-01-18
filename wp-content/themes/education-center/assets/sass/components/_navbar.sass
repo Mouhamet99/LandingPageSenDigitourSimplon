@@ -1,0 +1,813 @@
+.skip-link 
+	font-size: 1rem
+	color: $color-black
+	background-color: #f7f7f7
+	border: 1px solid rgba($color-black, 0.3)
+	padding: 10px 20px
+	@extend %semi-bold
+	transition: none
+	-webkit-transition: none
+	text-align: center
+	@extend %absolute
+	top: -9999px
+	left: 20px
+	+box-shadow(0px 2px 20px rgba($color-black, 0.3))
+	&:focus 
+		top: 0
+		z-index: 99
+		body.admin-bar &
+			top: 35px
+        
+.site-header 
+	.header
+		&-top
+			background: var(--ecp-primary-color-education)
+			color: #fff
+			padding: 15px 0
+			+mobile-sm
+				padding: 9px 0
+			.container 
+				@extend .display-flex 
+				+align-items(center)
+				+justify-content(space-between)
+				+mobile 
+					+flex-wrap(wrap)
+			.info
+				font-size: 14px
+				@extend .display-flex 
+				+mobile 
+					width: 100%
+					text-align: center
+					+justify-content(center)
+				+mobile-sm-max 
+					display: block
+				a
+					color: $gray-100
+					-webkit-transition: linear 0.2s
+					-moz-transition: linear 0.2s
+					transition: linear 0.2s
+					@extend %medium
+					@extend .display-inline-flex
+					+align-items(center)
+					&:hover
+						text-decoration: none
+						color: #dcdcdc
+						.style-one &
+							color: var(--ecp-secondary-color-education)
+						svg
+							fill: var(--ecp-primary-color-education)
+							.style-one &
+								fill: var(--ecp-secondary-color-education)
+					svg 
+						margin-right: 10px
+					+mobile-sm-max 
+						+display-flex 
+						+align-items(center)
+						+justify-content(center)
+				.tel-link
+					margin-right: 30px
+					+desktop-mini
+						margin-right: 50px
+					+mobile-sm-max 
+						margin: 0 0 10px 0
+
+			.social-wrap
+				max-width: 200px
+				margin: 0
+				+mobile 
+					width: 100%
+					max-width: 100%
+					text-align: center
+					margin-top: 15px
+					display: block
+					.social-networks 
+						+justify-content(center)
+				.social-networks 
+					+tablet 
+						width: auto !important
+				.widget-title
+					display: none
+			&--light 
+				background: $gray-100
+				.container 
+					+tablet-max 
+						display: block
+				.info
+					+tablet-max 
+						display: block
+						text-align: center
+						margin-bottom: 10px
+					svg 
+						fill: $text-gray
+					a
+						color: $text-gray
+						&:hover 
+							color: var(--ecp-primary-color-education)
+				.login-links
+					+mobile-sm-max 
+						margin: 0 0 10px 0
+				.social
+					&-wrap 
+						@extend .display-flex 
+						+align-items(center)
+						max-width: 100%
+						+justify-content(flex-end)
+						+desktop-mini
+							width: 50%
+						+tablet-max 
+							flex: 0 0 100%
+							max-width: 100%
+							+justify-content(center)
+						+mobile-sm-max 
+							display: block
+							
+					&-networks
+						width: auto !important
+						li 
+							a 
+								svg
+									fill: $text-gray
+								&:hover 
+									svg
+										fill: var(--ecp-primary-color-education)
+
+		&-wrapper 
+			@extend .display-flex
+			+align-items(center)
+		&-bottom
+			padding: 9px 0	
+			background: $color-white
+			@extend %relative	
+			background: $color-white
+			.header-transparent &		
+				background: transparent
+				@extend %absolute
+				left: 0
+				right: 0
+				z-index: 99
+			.site-branding
+				float: left
+				width: 50%
+				padding: 0 15px 0 0
+				+desktop-mini 
+					width: 40%
+				+laptop
+					width: 27%
+				
+				.site-title
+					font-size: 26px
+				p
+					margin-bottom: 0
+			//nav-wrap
+			.nav-wrap 
+				@extend .display-flex
+				+justify-content(flex-end)
+				+align-items(center)
+				+flex-wrap(wrap)
+				flex: 1
+			ul,
+			ol 
+				list-style: none
+				margin: 0
+				padding: 0
+		&-left 
+			@extend .display-flex
+			+justify-content(center)
+			+tablet-max 
+			ul 
+				ul
+					position: absolute
+					width: 220px
+					top: 100%
+					right: 9999em
+					background-color: $color-white
+					color: $color-black
+					box-shadow: 0px 2px 30px rgba($color-black, 0.3)
+					transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s
+					z-index: 999
+					opacity: 0
+					+laptop
+						width: 230px
+					+fullhd
+						width: 316px
+					ul 
+						top: 0
+					li 
+						display: block
+						font-size: 1rem
+						@extend %regular
+						text-align: left
+						border-bottom: 1px solid rgba(0,0,0,.05)
+						&.menu-item-has-children 
+							&::after 
+								background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-angle-down fa-w-10' aria-hidden='true' data-prefix='fas' data-icon='angle-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' data-fa-i2svg=''%3E%3Cpath fill='%23000' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E") !important
+								right: 15px
+								top: 50%
+								transform: translateY(-50%) rotate(270deg)
+							a 
+								&:last-child 
+									padding: 14px 25px
+									+fullhd
+										padding: 14px 30px
+						a 
+							color: $color-black !important
+							display: block
+							padding: 14px 25px
+							+fullhd
+								padding: 14px 30px
+							&:hover
+								color: var(--ecp-primary-color-education) !important
+						&:last-child 
+							a
+								padding: 14px 25px
+								+fullhd
+									padding: 14px 30px
+				li 
+					@extend %relative
+					display: inline-block
+					@extend %primary-font-education
+					font-size: 1rem
+					@extend %medium
+					line-height: 1.2
+					&.menu-item-has-children::after ,.angle-down::after
+						position: absolute
+						top: 50%
+						transform: translateY(-50%)
+						right: 0
+						content: ""
+						background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-angle-down fa-w-10' aria-hidden='true' data-prefix='fas' data-icon='angle-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' data-fa-i2svg=''%3E%3Cpath fill='%23000000' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E")
+						background-repeat: no-repeat
+						width: 10px
+						height: 12px
+						@extend %regular
+						+desktop-max
+							z-index: 0
+							display: none
+							right: 15px
+							top: 60%
+					//has-children
+					.angle-down 
+						display: none
+						padding: 0
+						background: transparent
+						border: 0
+						@extend %absolute
+						top: 0
+						right: 0
+						width: 45px
+						height: 45px
+						+desktop-max
+							right: -7px
+					&:nth-last-of-type(3),
+					&:nth-last-of-type(2),
+					&:nth-last-of-type(1)
+						&:hover,&.focus 
+							> .sub-menu 
+								right: 0
+								left: unset
+								li 
+									&:nth-last-of-type(3),
+									&:nth-last-of-type(2),
+									&:nth-last-of-type(1)
+									&:hover,&.focus 
+										> .sub-menu 
+												left: unset
+												right: 100%
+						ul.sub-menu li::after 
+							transform: translateY(-50%) rotate(-270deg)
+					&:last-child
+						a
+							padding-right: 0
+					li
+						&:hover,&.focus 
+							> .sub-menu 
+								right: unset
+								left: 100%
+					&:hover, &.focus 
+						> ul 
+							left: 0
+							opacity: 1
+							transform: translateY(0)
+							transition: opacity 0.15s linear, transform 0.15s linear
+					ul 
+						li
+							&:hover,&.focus 
+								right: 0
+								left: unset
+								opacity: 1
+								transform: translateY(0)
+								transition: opacity 0.15s linear, transform 0.15s linear
+							&:nth-last-of-type(3),
+							&:nth-last-of-type(2),
+							&:nth-last-of-type(1)
+								&:hover,&.focus 
+									> .sub-menu 
+										left: 100%
+										right: unset
+				//end of li
+				a 
+					padding: 25px 16px
+					transition: 0.2s ease all
+					-webkit-transition: 0.2s ease all
+					font-size: 1rem
+					display: inline-block
+					color: $color-black
+					line-height: 1.78
+					+laptop 
+						font-size: 0.78rem
+					+fullhd 
+						font-size: 0.89rem
+					&:hover 
+						color: var(--ecp-primary-color-education)
+			//end of header-left
+			.nav-menu 
+				@extend .display-flex
+				+justify-content(space-between)
+				+flex
+				+flex-wrap(wrap)
+		&-right 
+			@extend .display-flex
+			line-height: 1
+	.menu-container-wrapper
+		@extend .display-flex
+		+justify-content(flex-end)
+		+align-items(center)
+		+flex-wrap(wrap)
+		flex: 1
+		+desktop-max
+			z-index: 1
+			background-color: #fff
+			padding: 50px 25px 25px
+			color: #fff
+			position: fixed
+			top: 0
+			left: 0
+			width: 80%
+			height: 100vh
+			display: block
+			transition: all 0.3s ease
+			-webkit-transition: all 0.3s ease
+			-moz-transition: all 0.3s ease
+			transform: translateX(-100%)
+			-webkit-transform: translateX(-100%)
+			-moz-transform: translateX(-100%)
+			text-align: right
+			+mobile 
+				padding: 25px
+			+mobile-sm
+				width: 62%
+			.header 
+				&-left 
+					text-align: left 
+					display: block
+					margin-top: 10px
+					nav 
+						width: 100%
+					ul
+						display: block
+						position: relative
+						li
+							padding: 12px 0
+							display: block
+							position: relative
+							border-bottom: 0
+							.angle-down 
+								margin: 0
+								display: block
+								&:after
+									display: block
+							&.menu-item-has-children 
+								&:after
+									display: none
+							a
+								padding: 0 
+								color: $color-black
+							ul.sub-menu 
+								display: none
+								position: static
+								width: 100%
+								top: 100%
+								background-color: $color-white
+								color: $color-black
+								+box-shadow(none)
+								opacity: 1
+								z-index: 999
+								visibility: visible
+								+transition(none)
+								margin-top: 10px
+								padding: 0 0 0 30px
+								li 
+									padding: 12px 0
+									display: block
+									position: relative
+									border-bottom: 0
+									+mobile
+										padding: 10px 0
+									a
+										padding: 0 !important
+										font-weight: 500
+										width: 80%
+
+					.btn 
+						margin: 10px 0
+			&.open
+				z-index: 99
+				transform: translateX(0)
+				-webkit-transform: translateX(0)
+				-moz-transform: translateX(0)
+				+box-shadow(10px 0 15px rgba(0, 0, 0, 0.15))
+				overflow: auto
+			.header-search
+				margin-left: 0
+				button
+					display: none
+				&-inner
+					padding: 0
+					display: block
+					width: 100%
+					position: relative
+					top: 0
+					left: 0
+					+mobile-sm
+						width: 300px
+					form 
+						input[type="search"] 
+							height: 50px
+							&:focus 
+								outline: 1px solid $color-black
+	.toggle-btn 
+		@extend %relative 
+		+transform(rotate(0deg))
+		+border-radius(5px)
+		padding: 15px
+		border: none
+		background: transparent
+		width: 25px
+		+laptop 
+			display: none
+		&:focus
+			outline: 2px solid $color-black
+		.toggle-title 
+			display: none
+		.toggle-bar 
+			@extend %absolute 
+			width: 25px
+			height: 2px
+			background: $color-black
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			+transition(all ease-in-out 0.25s)
+			&:nth-of-type(1)
+				top: -18px
+			&:nth-of-type(3),&:nth-of-type(2)
+				top: 0
+			&:nth-of-type(4)
+				top: 18px
+		&.toggle-off
+			.toggle-bar 
+				&:nth-of-type(1)
+					width: 0
+					top: 0
+					left: 50%
+				&:nth-of-type(2)
+					+transform(rotate(45deg))
+				&:nth-of-type(3)
+					+transform(rotate(-45deg))
+				&:nth-of-type(4)
+					top: 0 
+					width: 0
+					left: 50%
+		.site-toggled &.toggle-main
+			opacity: 0
+    		visibility: hidden
+	.social-networks
+		li
+			a
+				+box-shadow((none)!important)
+				svg
+					fill: $color-white	
+	.header-search 
+		@extend .display-flex
+		@extend %relative
+		+desktop-mini	
+			margin-left: 40px
+		button 
+			padding: 0
+			border: 0
+			background-color: transparent
+			cursor: pointer
+			margin-left: 0 !important
+			&:hover 
+				path 
+					stroke: var(--ecp-primary-color-education)
+					transition: 0.2s ease all
+		&-inner
+			@extend %absolute
+			top: 130%
+			right: 0
+			width: 230px
+			background: #fff
+			z-index: 1	
+			+border-radius(5px)
+			padding: 20px
+			display: none
+			font-size: 14px
+			+box-shadow(0px 2px 30px rgba($color-black, 0.3))
+			form 
+				&:after
+					content: ''
+					display: block
+					clear: both
+				label
+					width: 100%
+					float: left
+				input[type="search"] 
+					+border-radius(5px)
+					border: 1px solid $gray-200
+					float: left
+					width: 100%
+					padding: 10px
+					margin: 0
+					outline: none
+					height: 36px
+					font-size: 0.89rem
+					+laptop
+						height: 38px
+					&::placeholder
+						font-size: 14px
+					&:focus 
+						outline: 1px dotted $color-black
+				input[type="submit"] 
+					border: 0
+					top: 50%
+					right: 30px
+					+transform(translateY(-50%))
+					padding: 0
+					border-radius: 0
+					box-shadow: none
+					text-shadow: none
+					@extend %absolute
+					background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9399 20L16.4539 15.506L20.9399 20ZM18.9399 9.5C18.9399 11.7543 18.0444 13.9163 16.4503 15.5104C14.8563 17.1045 12.6943 18 10.4399 18C8.1856 18 6.02359 17.1045 4.42953 15.5104C2.83547 13.9163 1.93994 11.7543 1.93994 9.5C1.93994 7.24566 2.83547 5.08365 4.42953 3.48959C6.02359 1.89553 8.1856 1 10.4399 1C12.6943 1 14.8563 1.89553 16.4503 3.48959C18.0444 5.08365 18.9399 7.24566 18.9399 9.5V9.5Z' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A")
+					width: 16px
+					background-color: transparent
+					height: 16px
+					font-size: 0
+					background-size: contain
+					background-repeat: no-repeat
+	.search-block
+		.header-search
+			margin: 0 0 0 40px
+			&-wrap 
+				display: inline-flex
+			&-inner
+				@extend %relative
+				display: block !important		
+				top: 0	
+				padding: 0
+				+fullhd
+					width: 279px
+				input[type="search"] 
+					background: $gray-100
+					border-color: $gray-100
+					height: 52px
+		//end of headerright
+.social-networks
+	margin: 0
+	padding: 0
+	list-style: none
+	@extend .display-flex
+	+flex-wrap(wrap)
+	+align-items(center)
+	row-gap: 10px
+	span 
+		display: inline-block
+		margin-right: 10px
+		+mobile-sm-max 
+			width: 100%
+			display: block
+	li
+		display: inline-block
+		margin-right: 20px
+		@extend .text-center
+		line-height: 1
+		&:last-child
+			margin-right: 0
+		a
+			@extend .display-flex
+			+justify-content(center)
+			+align-items(center)
+			.site-header &
+				+box-shadow(none)
+			svg
+				height: 17px
+				&:hover
+					fill: var(--ecp-secondary-color-education) 
+	&--bg 
+		a 
+			background: $color-white
+			+border-radius(50%)
+			width: 38px
+			height: 38px
+			line-height: 47px
+		.facebook
+			svg 
+				fill: #4267B2
+		.instagram 
+			svg 
+				fill: #833AB4
+		.twitter 
+			svg 
+				fill: #1DA1F2
+		.linkedin 
+			svg 
+				fill: #2867B2
+.drop-menu 
+	@extend %relative
+	display: inline-block
+	.mega-menu &
+		font-size: 1rem
+	a 
+		padding: 0 10px
+		color: $color-black
+		@extend %medium
+		.mega-menu & 
+			padding: 25px 16px
+			font-size: 0.78rem
+			+fullhd
+				font-size: 0.89rem
+				padding: 25px 21px 
+		&:focus 
+			outline: 1px dotted $color-black
+	&::after 
+		position: absolute
+		top: 6px
+		right: -4px
+		content: ""
+		background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-angle-down fa-w-10' aria-hidden='true' data-prefix='fas' data-icon='angle-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' data-fa-i2svg=''%3E%3Cpath fill='%23000000' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E")
+		background-repeat: no-repeat
+		width: 10px
+		height: 12px
+		@extend %regular
+		+fullhd 
+			right: 4px
+	ul.sub-menu 
+		position: absolute
+		width: 200px
+		top: 100%
+		background-color: $color-white
+		color: $color-black
+		clip: rect(1px, 1px, 1px, 1px)
+		box-shadow: 0px 2px 30px rgba($color-black, 0.3)
+		opacity: 0
+		z-index: 999
+		visibility: hidden
+		transition: opacity 0.2s ease
+		-webkit-transition: opacity 0.5s ease
+		.mega-menu &
+			width: 260px
+		li 
+			display: block
+			@extend .text-left
+			padding: 0
+			border-bottom: 1px solid rgba(0,0,0,.05)
+			.mega-menu &
+				padding: 0
+				border-bottom: 1px solid rgba(0,0,0,.05)
+			a 
+				padding: 10px
+				display: block
+				.mega-menu & 
+					display: block
+					@extend %regular
+					padding: 14px 25px  !important
+					+fullhd
+						padding: 14px 30px  !important
+	&:hover ,&:focus
+		> ul 
+			opacity: 1
+			clip: inherit
+			visibility: visible
+
+.login-links 
+	font-size: 14px
+	padding-right: 10px
+	ul
+		margin: 0
+		li
+			@extend %relative
+			padding: 0 20px 
+			display: inline-block
+			&:before
+				content: '|' !important
+				@extend %absolute 
+				left: -2px
+				top: 0
+				color: $gray-200
+			&:nth-child(1)
+				&:before 
+					display: none
+			a 
+				color: $color-black
+				@extend %medium
+				&:hover 
+					color: var(--ecp-primary-color-education)
+	
+.top-banner
+	background: $gray-100
+	padding: 20px 0
+	@extend .text-center
+	+desktop-mini
+		padding: 30px 0
+	+laptop
+		padding: 40px 0
+
+.style
+	&-one 
+		.header
+			&-center
+				width: 16%
+			&-bottom 
+				.nav-wrap 
+					+flex-wrap(nowrap)
+			&-right-wrap
+				width: 84%
+				@extend .display-flex
+				+justify-content(flex-end)
+				+align-items(center)
+			&-top
+				.info
+					a
+						&:hover
+							color: var(--ecp-secondary-color-education)
+							svg
+								fill: var(--ecp-secondary-color-education)
+			&-search
+				button
+					margin-top: 6px
+
+
+			&-right 
+				.btn
+					+desktop-mini
+						margin-left: 40px
+
+.site-header
+	&.stick-header 
+		.header-bottom
+			position: fixed !important
+			top: 0
+			left: 0
+			right: 0
+			z-index: 99
+			background-color: $color-white !important
+			width: 100%
+			+box-shadow(0 5px 25px rgba(0, 0, 0, 0.15))
+			animation: slideDown 0.25s ease-in-out
+			--webkit-animation: slideDown 0.25 ease-in-out
+.site-toggled 
+	@extend %overflow
+	@extend %relative
+	&:before
+		@extend %absolute
+		@extend %content
+		z-index: 1
+		background: rgba($color-black,0.5)
+		height: 100%
+		width: 100%
+	.site-header
+		&.stick-header 
+			.header-bottom
+				+box-shadow(none)
+				height: 0 
+				padding: 0
+	
+@keyframes slideDown
+    from
+        transform: translateY(-100%)
+    to
+        transform: translateY(0)
+    	
+.mobile-header 
+	+laptop 
+		display: none 
+	.header-bottom
+		.nav-wrap
+			+justify-content(space-between)
+	.header-search-wrap 
+		+mobile 
+			margin-top: 20px
+		+mobile-sm-max
+			width: 100%
+
+.site-header .mobile-header .menu-container-wrapper .header-search-inner
+	+box-shadow(none)
+
+.desktop-header 
+	+desktop-max 
+		display: none
+
+.site-branding img 
+  	width: var(--logo-width)

@@ -1,0 +1,73 @@
+.layout-1 
+    .banner
+        padding: 0
+        @extend %relative
+        &-image-wrapper 
+            img 
+                width: 100%
+                vertical-align: top
+                height: 750px
+                max-height: 750px
+                object-fit: cover
+                +laptop 
+                    height: 850px
+                    max-height: 850px
+                +mobile 
+                    height: auto
+        &__wrap
+            @extend %absolute
+            left: 0
+            @extend .w-100
+            top: 0
+            bottom: 0
+            padding: 120px 20px 50px
+            +tablet
+                left: 0
+                padding: 0
+                bottom: 50%
+                +transform(translateY(50%))
+            +mobile 
+                position: relative
+                padding: 30px 0 20px
+            .btn-wrap 
+                margin-top: 30px
+                +mobile 
+                    margin-top: 20px
+        &__text
+            +desktop-mini
+                max-width: 550px
+        &__stitle  
+            @extend .section-header__info
+            
+        &__title 
+            @extend .section-header__title
+            margin: 10px 0 25px !important
+            +mobile 
+                margin: 5px 0 15px !important
+        p 
+            color: $color-black
+        
+        &--slider 
+            .banner
+                &__title
+                    color: $color-white
+                &__text 
+                    color: $color-white
+    &.banner-overlay
+        .banner
+            &__text
+                p 
+                    color: $color-white
+            &__title 
+                color: $color-white !important        
+.banner-overlay
+    .banner
+        @extend %relative
+        &:before
+            @extend %content
+            @extend %absolute 
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            background: rgba(0, 0, 0, 0.3)

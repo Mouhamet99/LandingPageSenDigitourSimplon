@@ -1,0 +1,177 @@
+.contact-main-wrap 
+    @extend .display-flex
+    @extend %primary-font-education
+    +mobile
+        +flex-direction(column) 
+           
+    
+.contact-wrapper 
+    @extend .spacing
+    .contact-info-wrap   
+        +tablet-max 
+            flex: 0 0 100%
+        .section-header
+            margin-bottom: 30px
+        p 
+            margin-bottom: 0
+        
+        .contact-info 
+            padding: 0
+            margin: 0
+            .contact-details
+                a 
+                    display: block
+                    margin: 5px 0   
+                    &:hover 
+                        text-decoration: underline
+                        var(--ecp-primary-color-education)          
+            .contact-hours
+                display: block        
+            .icon 
+                @extend .display-flex
+                +align-items(center)
+                +justify-content(center)
+                height: 40px
+                width: 40px
+                +border-radius(50%)
+                background-color: var(--ecp-primary-color-education)
+                margin-right: 20px
+
+            li 
+                @extend .display-flex
+                +align-items(center)
+                +flex-wrap(wrap)
+                background: rgba(55, 126, 249, 0.1)
+                padding: 20px
+                +border-radius(5px)
+                margin-bottom: 20px
+                &:last-child
+                    margin-bottom: 0
+            
+                .contact-details
+                    .contact-title
+                        display: block
+                        font-size: 1.22rem
+                        line-height: 34px
+                        @extend %medium
+                        color: $color-black
+                    a
+                        color: $text-gray
+                        &:hover 
+                            color: var(--ecp-secondary-color-education)
+                            text-decoration: underline
+                .social-contact 
+                    width: 100%
+                    @extend .display-flex
+                    a 
+                        margin-right: 20px 
+                        line-height: 1
+                        svg 
+                            fill: $text-gray 
+                        &:hover 
+                            svg 
+                                fill: var(--ecp-secondary-color-education)
+        .contact-details
+            +mobile-sm-max 
+                width: 100%
+                margin-top: 10px
+                
+.contact-form  
+    color: $color-white
+    +tablet-max 
+        margin-top: 50px
+        flex: 0 0 100%
+    +mobile 
+        margin-top: 40px
+    .section-header 
+        margin-bottom: 30px
+    .form-wrap 
+        background-color: var(--ecp-primary-color-education)
+        +border-radius(5px)
+        padding: 20px
+        +desktop-mini
+            padding: 40px
+        +laptop
+            padding: 60px
+        .section-header 
+            h2,p 
+                color: $color-white 
+        .contact-form-grid 
+            @extend .display-flex
+            grid-gap: 50px
+               
+            +mobile
+                grid-gap: 25px
+              
+
+            +mobile 
+                +flex-direction(column)
+                grid-gap: 0
+              
+           
+            
+        //form-grid
+        p 
+            margin-bottom: 20px
+            @extend %relative
+            &:last-child
+                margin-bottom: 0
+        p,input,textarea 
+            width: 100%
+            input:not(input[type = "submit"]), textarea
+                color: $color-black
+                background: $color-white
+                padding: 15.5px 20px
+                border: 1px solid $color-white
+                +border-radius(5px)
+                font-size: 1rem
+
+            input[type = "submit"] 
+                width: unset
+                color: $color-black
+                +border-radius(5px)
+                @extend %primary-font-education
+                border: 1px solid $color-white
+                font-size: 1rem
+                @extend %medium
+                margin-top: 0
+                background: $color-white
+                cursor: pointer
+                padding: 12px 20px
+                width: 100%
+                +desktop-mini 
+                    padding: 15px 20px
+                +laptop 
+                     padding: 17.5px 20px
+                
+                &:hover 
+                    background: var(--ecp-secondary-color-education)
+                    color: $color-white
+                    border: 1px solid var(--ecp-secondary-color-education)
+            label 
+                color: $color-white    
+                font-size: 14px 
+            [type="checkbox"], [type="radio"]
+                width: auto
+            .wpcf7-list-item
+                margin: 0
+        .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output
+            border-color: #fff
+            color: #fff
+            margin: 0
+        .wpcf7 .ajax-loader 
+            position: absolute
+            top: 50%
+            right: 20px
+            transform: translateY(-50%)
+                
+            
+            //submitbutton
+    //contact-form-grid
+//contactformwrapper
+
+.map 
+    @extend .spacing
+    iframe 
+        width: 100%
+        height: 548px

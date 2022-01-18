@@ -1,0 +1,47 @@
+//breadcrumbs
+
+.breadcrumb-wrapper 
+	@extend .text-center
+	background: rgba(75, 131, 252, 0.12)
+	padding: 36px 0
+	@extend %primary-font-education
+	font-size: 0.89rem
+	@extend %regular 
+	margin-bottom: 20px
+	+tablet 
+		margin-bottom: 25px
+	+desktop-mini
+		margin-bottom: 35px
+	+laptop 
+		margin-bottom: 50px
+		
+	.page-title,.entry-header .entry-title
+		font-size: 1.8rem 
+		line-height: 2.33rem
+		color: $color-black
+		@extend %medium
+		margin-bottom: 10px
+		+tablet
+			font-size: 2.44rem 
+			line-height: 3.33rem
+	#crumbs 
+		a,.separator 
+			color: $text-gray
+			padding: 1px
+			&:hover 
+				color: $color-black
+		.separator 
+			padding: 0 10px
+		.current 
+			a 
+				color: $color-black
+				cursor: default
+				pointer-events: none
+		
+	
+
+
+            
+            
+
+        

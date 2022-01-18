@@ -1,0 +1,41 @@
+.page-grid 
+    @extend .display-flex
+    +flex-direction(column) 
+    grid-gap: 30px
+    @extend .spacing
+    +tablet
+        grid-gap: 50px
+    +laptop 
+        +flex-direction(row) 
+    
+    #secondary 
+        section.widget 
+            &:last-child 
+                margin-bottom: 0
+
+    .site-main 
+        @include flex
+        max-width: 100%
+    .leftsidebar & 
+        -webkit-box-direction: reverse
+        -webkit-box-orient: horizontal
+        -webkit-flex-direction: row-reverse
+        -moz-flex-direction: row-reverse
+        -ms-flex-direction: row-reverse
+        flex-direction: row-reverse
+
+#secondary 
+    max-width: 100%
+    flex: 0 0 100%
+    +laptop
+        flex: 0 0 30.977%
+        max-width: 30.977%
+//secondary
+
+.leftsidebar 
+    .page-grid 
+        +flex-direction(column)
+        +laptop
+            +flex-direction(row-reverse)
+        
+//leftsidebar

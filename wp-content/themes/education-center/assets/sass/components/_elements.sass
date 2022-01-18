@@ -1,0 +1,245 @@
+/* Elements --------------------------------------------- */
+hr 
+	background-color: #ccc
+	border: 0
+	height: 1px
+	margin-bottom: 1.5em
+
+
+ul,
+ol 
+	margin: 0 0 1.5em 3em
+
+
+ul 
+	list-style: disc
+
+
+ol 
+	list-style: decimal
+
+
+li > ul,
+li > ol 
+	margin-bottom: 0
+	margin-left: 1.5em
+
+
+dt 
+	@extend %semi-bold
+
+
+dd 
+	margin: 0 1.5em 1.5em
+
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object 
+	max-width: 100%
+
+
+img 
+	height: auto
+	max-width: 100%
+
+
+figure 
+	margin: 1em 0
+
+
+table 
+	margin: 0 0 1.5em
+	width: 100%
+
+
+select 
+	max-width: 100%
+
+::placeholder 
+	@extend %primary-font-education
+	font-size: 1rem
+	@extend %medium
+
+
+.wp-caption-text 
+	@extend %primary-font-education
+	@extend %medium
+	font-size: 0.667rem
+	line-height: 2.3333333
+	@extend .text-center
+	color: $text-gray
+
+.has-drop-cap:not(:focus)::first-letter 
+    color: $color-black
+blockquote
+    background-color: $color-white
+    @extend %relative
+    margin: 0 
+    padding: 30px
+    +box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+    +border-radius(5px)
+    &::after 
+        @extend %absolute
+        @extend %content
+        background-image: url("data:image/svg+xml,%3Csvg width='58' height='51' viewBox='0 0 58 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M24.7531 8.62224L22.6499 5.36865C8.08926 15.2108 0 27.1677 0 37.0098C0 46.5266 6.95676 51.0002 12.8619 51.0002C20.304 51.0002 25.5621 44.6557 25.5621 37.9859C25.5621 32.3734 22.0028 27.5744 17.2301 25.7849C15.855 25.2969 14.5607 24.8902 14.5607 22.5313C14.5607 19.5218 16.7448 15.0481 24.7531 8.62224ZM56.8675 8.62224L54.7643 5.36865C40.3654 15.2108 32.1144 27.1677 32.1144 37.0098C32.1144 46.5266 39.2329 51.0002 45.1381 51.0002C52.6611 51.0002 58 44.6557 58 37.9859C58 32.3734 54.3598 27.5744 49.4254 25.7849C48.0502 25.2969 46.8368 24.8902 46.8368 22.5313C46.8368 19.5218 49.1018 15.0481 56.8675 8.62224Z' fill='%23377EF9'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='58' height='51' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        left: 30px
+        top: 30px
+        width: 30px
+        height: 30px
+        +desktop-mini
+            width: 40px
+            height: 30px
+        +laptop
+            width: 58px
+            height: 45px
+    
+    p 
+        margin-bottom: 0 !important
+        @extend %regular
+        font-size: 1rem
+        font-style: normal
+        color: $text-gray
+        
+    
+    cite 
+        font-size: 1rem
+        color: $color-black
+        @extend %regular
+        font-style: normal
+        @extend %primary-font-education
+        margin-top: 5px
+        display: block
+        
+    p,cite 
+        @extend .text-left
+        padding-left: 50px
+        +desktop-mini
+            padding-left: 60px
+        +laptop
+            padding-left: 90px
+		
+	
+
+#primary .post .entry-content, #primary .page .entry-content 
+    table 
+        @extend %primary-font-education
+        border-collapse: collapse
+        text-align: left
+        padding: 20px
+        border: none
+        thead 
+            tr 
+                background: var(--ecp-primary-color-education)
+                border: none
+                th 
+                    color: $color-white
+                    font-size: 1rem
+                    @extend %medium
+                    line-height: 1.5556
+                    padding: 18px 21px
+                    border: none
+
+        tbody 
+            border: none
+            tr 
+                border: none
+                td 
+                    border: none
+                    font-size: 1rem
+                    @extend %medium
+                    line-height: 1.5556
+                    color: $text-gray
+                    padding: 18px 21px
+
+
+                &:nth-of-type(odd) 
+                    background: $gray-100
+
+
+                &:nth-of-type(even) 
+                    background: rgba(75, 131, 252, 0.12) 
+
+                        
+.wp-block-image 
+    .alignright 
+        display: inline
+        float: right
+        margin-left: 1.5em
+        +mobile 
+            margin-left: 0
+            float: none
+    
+    .alignleft 
+        display: inline
+        float: left
+        margin-right: 1.5em
+        +mobile
+            margin-right: 0
+            float: none
+    figcaption
+        @extend .text-center
+.wp-block-media-text
+    &.is-stacked-on-mobile 
+        .wp-block-media-text__content 
+            padding-right: 0
+
+            +mobile
+                padding: 0
+        
+    &.has-media-on-the-right 
+        .wp-block-media-text__content 
+            padding-right: 8%
+            padding-left: 0
+
+            +mobile
+                padding-right: 0
+
+.tag-list
+    +mobile
+        text-align: left
+    span
+        margin-right: 20px
+        display: inline-block
+    ul
+        margin: 0
+        font-size: 1rem
+        @extend %semi-bold
+        color: $color-black
+        li
+            display: inline-block
+            margin-bottom: 15px
+            +tablet
+                margin-bottom: 20px
+            &:not(:last-of-type)
+                margin-right: 10px
+                +tablet
+                    margin-right: 10px
+        a
+            padding: 9px 10px
+            max-height: 36px
+            line-height: 1
+            background: rgba(55, 126, 249, 0.1)
+            color: $color-black
+            font-size: 1rem
+            +border-radius(5px)
+            @extend %regular
+            display: inline-block
+            @extend %primary-font-education
+            +transition(all 0.5s ease)
+            @extend %capitalise
+            margin-bottom: 15px
+            +tablet
+                margin-bottom: 20px
+            
+            &:not(:last-of-type)
+                margin-right: 10px
+                +tablet
+                    margin-right: 10px
+            
+      
+  

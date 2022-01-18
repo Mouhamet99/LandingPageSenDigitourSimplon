@@ -1,0 +1,198 @@
+.comments-area 
+	ol 
+		margin: 0 
+		padding: 0 
+		list-style: none 
+		
+		&.children 
+			border-top: 1px solid $color-black 
+			margin-top: 15px 
+			padding-top: 15px
+			+mobile
+				padding-left: 40px
+			+tablet
+				margin-top: 25px 
+				padding-top: 25px
+			li
+				+tablet
+					padding-left: 110px 
+			.comment-content 
+				border: none
+				&:after,
+				&:before
+					display: none
+			& > li 
+				&:first-child 
+					& > .comment-body 
+						margin-top: 0 
+						padding-top: 0
+						.comment-author 
+							img 
+								top: 26px
+	.comment
+		&-body 
+			position: relative 
+		&-meta
+			+tablet
+				padding-left: 120px 
+		
+.comment-title, 
+.comment-reply-title 
+	margin-top: 0 
+	@extend %regular
+	font-size: 2.33rem
+	margin-bottom: 40px 
+.comment-reply-title 
+	margin-bottom: 30px 
+	a#cancel-comment-reply-link 
+		display: inline-block 
+		margin-left: 20px 
+		text-decoration: underline 
+		color: #333 
+		text-transform: capitalize 
+		&:hover 
+			color: var(--ecp-secondary-color-education)
+			text-decoration: none 
+.comment-body 
+	margin-top: 15px 
+	+tablet
+		margin-top: 30px 
+	.fn 
+		font-size: 1.44rem
+		@extend %regular
+		color: #000 
+		+mobile
+			margin-left: 15px
+		a 
+			color: #000 
+			@extend %medium
+			&:hover 
+				color: var(--ecp-primary-color-education)
+				text-decoration: underline
+		.says 
+			display: none 
+	
+	.comment-metadata 
+		font-size: 14px
+		@extend %medium
+		a 
+			color: var(--ecp-primary-color-education)
+	.comment-awaiting-moderation 
+		margin: 0 
+		font-size: 0.888em 
+		color: #3f46ad 
+	.comment-content 
+		font-size: 1rem 
+		padding: 5px 0 15px 0
+		@extend %relative
+		color: $color-black
+		+tablet 
+			padding: 5px 0 25px 120px
+
+		p 
+			margin-top: 0px 
+			margin-bottom: 20px 
+			&:last-child 
+				margin-bottom: 0 
+		a 
+			color: var(--ecp-primary-color-education)
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+.comment-list 
+	& + .comment-respond 
+		@extend .spacing
+.comment-author 
+	+mobile 
+		margin-bottom: 20px
+	img 
+		width: 60px 
+		height: 60px 
+		border-radius: 100% 
+		object-fit: cover 
+		top: 8px 
+		left: 0 
+		+tablet 
+			position: absolute 
+			width: 80px 
+			height: 80px 
+.comment-body .fn a:hover, 
+.comment-body .comment-metadata a:hover 
+	color: var(--ecp-secondary-color-education) 
+	text-decoration: underline
+.reply 
+	a 
+		@extend %capitalise 
+		font-size: 1rem 
+		letter-spacing: 0.5px 
+		position: relative 
+		display: inline-block 
+		color: var(--ecp-primary-color-education)
+		text-decoration: underline
+		&:hover 
+			color: var(--ecp-secondary-color-education) 
+			text-decoration: none
+.comment-respond 
+	color: $color-black
+	.comment-reply-title
+		font-size: 1.33rem
+		@extend %capitalise
+		span
+			a
+				font-size: 18px
+				float: right
+				color: secondary-200
+				&:hover
+					color: var(--ecp-primary-color-education)
+					text-decoration: underline
+	.form-info 
+		float: right
+		padding-bottom: 10px
+		color: $color-black
+	form 
+		p 
+			margin-top: 0 
+			margin-bottom: 20px
+			+tablet
+				margin-bottom: 30px 
+			&:not(.comment-form-cookies-consent) 
+				label 
+					display: none 
+			textarea 
+				height: 150px 
+			&.form-submit 
+				margin-bottom: 0 
+		input#wp-comment-cookies-consent 
+			display: inline-block 
+			vertical-align: top 
+			margin-top: 10px 
+		label[for="wp-comment-cookies-consent"] 
+			font-size: 0.89rem 
+			display: inline-block 
+			padding-left: 10px 
+			width: calc(100% - 15px) 
+		label[for="wp-comment-cookies-consent"]:hover 
+			text-decoration: underline 
+			cursor: pointer
+.comment-form 
+	p 
+		&.comment-notes 
+			display: none 
+.comment-respond form p input[type="text"], 
+.comment-respond form p input[type="url"], 
+.comment-respond form p input[type="email"], 
+.comment-respond form p input[type="tel"], 
+.comment-respond form p textarea 
+	height: 60px 
+	background: $color-white 
+	border-color: $border-color
+	padding: 10px 15px 
+	font-size: 0.89rem 
+	+border-radius(10px)
+	width: 100%
+	+placeholder-color($color-black)
+	+mobile
+		height: 50px
+
+.comment-respond form p textarea  
+	height: 100px

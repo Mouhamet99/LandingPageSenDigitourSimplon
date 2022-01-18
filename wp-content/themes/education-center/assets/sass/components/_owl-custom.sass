@@ -1,0 +1,36 @@
+.owl 
+    &-dots
+        @extend .text-center
+        margin-top: 30px
+        +tablet
+            margin-top: 40px
+        +laptop
+            margin-top: 50px
+    &-carousel
+        button.owl-dot
+            width: 25px
+            height: 10px 
+            background: var(--ecp-primary-color-education) !important
+            +border-radius(20px)
+            margin: 0 6px
+            +transition(all ease 0.5s)
+            +box-shadow(0 4px 3px 1px rgba(0, 0, 0, 0.12))
+            .training &
+                background: var(--ecp-primary-color-training)
+            .partner &
+                height: 5px 
+                background: $color-black
+                &.active 
+                    background: var(--ecp-primary-color-education)
+            &.active 
+                width: 46px
+
+        .owl-stage 
+            @extend .display-flex
+        
+        .owl-item 
+            @extend .display-flex
+            flex: 1 0 auto
+            .partner &
+                +justify-content(center)
+        

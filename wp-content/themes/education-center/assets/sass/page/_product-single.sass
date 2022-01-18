@@ -1,0 +1,337 @@
+.single-product
+    span.onsale
+        font-size: 14px
+        @extend %primary-font-education
+        color: #ffffff
+        padding: 9px 10px
+        +border-radius(5px)
+        background-color: var(--ecp-primary-color-education)
+        @extend %absolute
+        left: 20px
+        top: 20px
+        right: unset
+        @extend %medium
+        z-index: 1
+        min-height: unset !important
+        min-width: unset !important
+        line-height: 1
+        +desktop-mini
+            top: 30px
+            left: 30px
+    //onsalebtn
+
+    .summary.entry-summary
+        margin: 0
+
+        .product_title
+            @extend %primary-font-education
+            @extend %medium
+            line-height: 1.269
+            font-size: 1.78rem
+            +tablet 
+                font-size: 2.11rem
+        
+
+        .price
+            margin-top: 22px
+            margin-bottom: 13px
+            color: $text-gray
+            del
+                opacity: 0.8
+                margin-right: 15px
+                .amount
+                    font-size: 1.33rem
+
+                bdi
+                    color: $text-gray
+                    text-decoration: line-through
+                    
+                
+            //originalprice
+
+        ins
+            .amount
+                font-size: 1.02rem
+                @extend %regular
+            bdi
+                color: var(--ecp-primary-color-education)
+                    
+                
+            
+        //price
+        .woocommerce-product-details__short-description p
+            @extend %primary-font-education
+            font-size: 1rem
+            line-height: 1.77778
+            color: $text-gray
+        //paragraph
+
+        .cart
+            div.quantity
+                margin: 0 21px 0 0
+
+                .qty
+                    padding: 5px
+                    width: 80px
+                    margin: 0
+                    background-color: rgba(75, 131, 252, 0.12)
+                    border-color: rgba(75, 131, 252, 0.12)
+                    height: 50px
+                    +desktop-mini
+                        height: 55px
+                    +laptop
+                        height: 60px
+            
+            button
+                @extend .btn 
+                @extend .btn-primary
+                @extend .btn-lg
+                +mobile-sm-max 
+                    margin-top: 20px
+
+                
+            
+        //form cart
+
+        .product_meta
+            color: $color-black
+            @extend %primary-font-education
+            @extend %medium
+            .posted_in a
+                color: $text-gray
+                &:hover
+                    text-decoration: underline
+            span 
+                margin-right: 10px
+                &:last-child 
+                    margin-right: 0
+                
+            
+        //productmeta
+    //summary
+    div.product
+        div.images.woocommerce-product-gallery
+            margin-bottom: 4em
+
+        
+        .woocommerce-tabs.wc-tabs-wrapper
+            margin-top: 150px
+
+            +mobile
+                margin-top: 65px
+            +mobile-sm-max 
+                margin-top: 20px
+            
+            ul.tabs
+                padding: 0 !important
+                li
+                    background-color: transparent
+                    color: $color-black
+                    border-radius: 0
+                    border: 0
+                    padding: 0
+                    margin-right: 30px
+
+                    +mobile
+                        width: 100%
+                       
+                        &:not(:last-child)
+                            margin-bottom: 12px
+                    +laptop 
+                        margin-right: 50px
+                        
+                    &::before,
+                    &::after
+                        content: none
+                    
+                    a
+                        @extend %bold
+                        font-size: 1.22rem
+                        color: $color-black
+                        padding: 10px 0 10px 5px
+                        +desktop-mini   
+                            font-size: 1.44rem
+                    
+                    &.active
+                        color: $color-black
+                        background-color: transparent
+                        border-radius: 0
+                        border-bottom: 3px solid var(--ecp-primary-color-education)
+
+                        a
+                            color: $color-black
+                        
+                    //active
+                //li
+            //ul
+
+            .woocommerce-Tabs-panel
+                h2
+                    @extend %primary-font-education
+                    position: relative
+                    line-height: 1.25555
+                    color: $color-black
+                    @extend %medium
+                    margin-bottom: 30px
+                    font-size: 1.78rem
+                    +tablet 
+                        font-size: 2.11rem
+                    
+                //heading
+
+                p
+                    @extend %primary-font-education
+                    font-size: 1rem
+                    line-height: 1.78
+                    color: $text-gray
+                
+            
+        //tabs wrapper
+    //product
+
+    .related.products
+        > h2
+            @extend %primary-font-education
+            position: relative
+            line-height: 1.25
+            color: $color-black
+            @extend %medium
+            margin-bottom: 30px
+            font-size: 1.78rem
+            +tablet 
+                font-size: 2.11rem
+            +laptop
+                margin-bottom: 50px
+            
+        //heading
+
+        .products
+            &::before
+                display: none
+            
+        
+    //relatedproducts
+
+    #review_form
+        #respond
+            #reply-title
+                color: $text-gray
+            
+            .comment-form
+                margin-top: 20px
+                p.comment-notes
+                    margin-bottom: 30px !important
+                //comment
+
+                .comment-form-rating
+                    label
+                        display: inline-block
+                        margin-bottom: 9px
+                        @extend %primary-font-education
+                        @extend %regular
+                    //label
+                //rating form
+
+                .comment-form-comment,
+                .comment-form-email,
+                .comment-form-author
+                    label
+                        display: none
+                    
+
+                    input,
+                    textarea
+                        background-color: #f9f9f9
+                        border: 0
+                        width: 100%
+                        padding: 17.5px 30px
+                    
+
+                    ::placeholder
+                    
+                //labels
+                .comment-form-author
+                    width: 50%
+                    float: left
+                    padding-right: 26px
+                    margin-bottom: 13px
+                    +mobile
+                        float: unset
+                        width: 100%
+                        padding-right: 0
+                    
+                
+
+                +mobile
+                    float: unset
+                    width: 100%
+                    padding-right: 0
+                
+                .comment-form-email
+                    width: 50%
+                    padding-left: 26px
+                    float: right
+                    margin-bottom: 13px
+
+                    +mobile
+                        float: unset
+                        width: 100%
+                        padding-left: 0
+                    
+                
+
+                .comment-form-comment
+                    textarea
+                        height: 171px !important
+                    
+                //comment
+
+                .comment-form-cookies-consent
+                    margin: 15px 0
+                    @extend .display-flex 
+                    +align-items(center)
+                    width: 100%
+                    label
+                        margin-left: 15px
+                    input 
+                        margin: 0
+                //cokkie consent
+
+                .form-submit
+                    margin: 25px 0 0
+                    .submit
+                        @extend .btn 
+                        @extend .btn-primary
+                        @extend .btn-lg 
+                        
+                    
+                //formsubmit
+            //commentform
+        
+    
+
+    .reviews_tab
+        margin-bottom: 0 !important
+    
+
+    .entry-summary
+        .woocommerce-product-rating
+            .star-rating
+                font-size: .875rem
+                margin-top: 11px
+                span::before
+                    color: var(--ecp-primary-color-education)
+                    font-family: star
+                
+            
+        //product rating
+
+    .related.products
+        padding-top: 20px
+        +tablet
+            padding-top: 25px
+        +desktop-mini
+            padding-top: 35px
+        +laptop
+            padding-top: 50px
+    

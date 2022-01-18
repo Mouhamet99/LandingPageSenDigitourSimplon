@@ -1,0 +1,232 @@
+.woocommerce-page 
+    .page-header .page-title 
+        color: $color-black
+    
+    .content-area .page-grid .site-main 
+        display: block 
+        .woocommerce-result-count 
+            @extend %primary-font-education
+            font-size: 14px
+            color: $color-black
+            margin-bottom: 30px
+            @extend %medium
+        
+        .woocommerce-ordering 
+            margin-bottom: 30px
+            +mobile
+                width: 100%
+                float: left
+            select 
+                background: $gray-100
+                font-size: 14px 
+                border: 1px solid $gray-100
+                +border-radius(5px)
+                padding: 10px 20px
+                
+        ul.products  
+            margin-bottom: 0
+            &::before 
+                content: none
+            
+            display: grid
+            grid-template-columns: 1fr
+            grid-gap: 30px
+            +tablet 
+                grid-template-columns: repeat(3,1fr)
+                
+            
+            +laptop
+                grid-template-columns: repeat(4,1fr)
+                grid-gap: 50px
+            .price 
+                font-size: 1.2rem
+                ins 
+                    margin-left: 10px
+                del 
+                    bdi 
+                        opacity: 1
+                        text-decoration: line-through
+                    
+               
+                //del
+            //price
+            li.product 
+                float: unset
+                width: 100% !important
+                margin: 0
+               
+                a 
+                    img 
+                        border-radius: 10px
+                    
+                    .woocommerce-loop-product__title 
+                        @extend %primary-font-education
+                        font-weight: 600
+                        font-size: 1.333rem
+                        padding: 3px 0 10px
+                    
+                    .woocommerce-Price-currencySymbol  
+                        font-size: 1rem
+                    
+                      
+                    .woocommerce-Price-amount bdi 
+                        font-weight: 400
+                        font-size: 1.2rem
+                        color: #58595B
+                    
+                    
+                //link
+                .button,.added_to_cart  
+                    @extend .btn 
+                    @extend .btn-primary
+                    @extend .btn-sm
+                    margin-top: 1em
+                    &.added 
+                        display: none
+                
+                a
+                    .onsale 
+
+                        font-size: 14px
+                        @extend %primary-font-education
+                        color: #ffffff
+                        padding: 9px 10px
+                        +border-radius(5px)
+                        background-color: var(--ecp-primary-color-education)
+                        @extend %absolute
+                        left: 20px
+                        top: 20px
+                        right: unset
+                        @extend %medium
+                        z-index: 1
+                        min-height: unset !important
+                        min-width: unset !important
+                        line-height: 1
+                        +desktop-mini
+                            top: 30px
+                            left: 30px
+                //onsalebtn
+
+                
+            
+         
+        //product listing
+
+        nav.woocommerce-pagination 
+           .page-numbers 
+               border: 0
+               li 
+                @extend %relative
+                height: 45px
+                width: 45px
+                background-color: var(--ecp-primary-color-education)
+                color: #ffffff
+                display: inline-block
+                margin: 0 3px
+                line-height: 45px
+                border-radius: 50%
+                transition: 0.3s ease all
+
+                span.page-numbers, a 
+                    background: var(--ecp-primary-color-education)
+                    color: $color-white
+                    line-height: 26px
+                    height: 45px
+                    width: 45px
+                    border: 1px solid var(--ecp-primary-color-education)
+
+                    &:hover 
+                        background-color: var(--glt-secondary-color)
+                        border: 1px solid var(--glt-secondary-color)
+                    
+                
+                a.next,a.prev 
+                    line-height: 22px
+                
+               
+            
+        //pagination
+       
+        .woocommerce-notices-wrapper 
+            .woocommerce-message,.woocommerce-info 
+                border-top-color: var(--ecp-primary-color-education)
+                +mobile-sm-max 
+                    +display-flex 
+                    +flex-direction(column-reverse)
+                    +flex-wrap(wrap)
+            .wc-forward 
+                @extend .btn 
+                @extend .btn-sm
+                @extend .btn-primary
+                +mobile-sm-max 
+                    margin-top: 20px
+        .woocommerce-info 
+            border-top-color: var(--ecp-primary-color-education) 
+            &:before 
+                color: var(--ecp-primary-color-education) 
+        //notice wrapper
+
+    //site-main
+
+
+
+.woocommerce .star-rating 
+    overflow: hidden
+    @extend %relative
+    height: 1em
+    width: 5.4em
+    font-family: star
+    line-height: 1
+    font-size: 0.7rem
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 10px
+
+
+li .star-rating 
+    overflow: hidden
+    @extend %relative
+    height: 1em
+    width: 5.4em
+    font-family: star
+    line-height: 1
+    font-size: 0.7rem
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 10px
+    font-family: star
+
+
+li .star-rating 
+    overflow: hidden
+    @extend %relative
+    height: 1em
+    width: 5.4em
+    font-family: star
+    line-height: 1
+    font-size: 0.7rem
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 10px
+
+
+li .star-rating::before 
+    content: "\73\73\73\73\73"
+    color: #d3ced2
+    float: left
+    top: 0
+    left: 0
+    @extend %absolute
+    font-family: star
+
+
+li .star-rating > span::before 
+    content: "\73\73\73\73\73"
+    top: 0
+    @extend %absolute
+    left: 0
+    color: var(--ecp-primary-color-education)
+    font-family: star
+
+.woocommerce .products ul::after, .woocommerce .products ul::before, .woocommerce ul.products::after, .woocommerce ul.products::before 
+    display: none

@@ -1,0 +1,168 @@
+@import 'flex'
+// Split Column
+=list-col($num)
+    -webkit-column-count: $num
+    -moz-column-count: $num
+    -ms-column-count: $num
+    -o-column-count: $num
+    column-count: $num
+    
+// sticky element
+=sticky
+    position: -webkit-sticky !important
+    position: -moz-sticky !important
+    position: -ms-sticky !important
+    position: -o-sticky !important
+    position: sticky !important
+
+// animation frame
+=animation($animation, $time, $transition)
+    -webkit-animation: $animation $time $transition 
+    -o-animation: $animation $time $transition
+    -moz-animation: $animation $time $transition
+    animation: $animation $time $transition
+
+// transition-slow
+=transition-slow
+    -webkit-transition: all 0.5s linear
+    -moz-transition: all 0.5s linear
+    -ms-transition: all 0.5s linear
+    -o-transition: all 0.5s linear
+    transition: all 0.5s linear
+
+// transition
+=transition($transition)
+    -webkit-transition: $transition
+    -moz-transition: $transition 
+    -ms-transition: $transition  
+    -o-transition: $transition 
+    transition: $transition 
+
+// transform
+=transform($transform)
+    -webkit-transform: $transform
+    -moz-transform: $transform 
+    -ms-transform: $transform  
+    -o-transform: $transform 
+    transform: $transform 
+
+// Cubic transition    
+=cubic
+    -webkit-transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    -moz-transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    transition: all 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+=cubic-slow
+    -webkit-transition: all 0.6s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    -moz-transition: all 0.6s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    transition: all 0.6s cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+// calculate width
+=calc($property, $expression)
+    #{$property}: -moz-calc(#{$expression})
+    #{$property}: -webkit-calc(#{$expression})
+    #{$property}: calc(#{$expression})
+
+// border element
+=border-dir($direction, $width, $style, $color) 
+    border-#{$direction}: $width $style $color
+
+// border radius
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius 
+    -ms-border-radius: $radius  
+    border-radius: $radius
+
+// box shadow
+=box-shadow($box-shadow)
+    -webkit-box-shadow: $box-shadow
+    -moz-box-shadow: $box-shadow
+    -ms-box-shadow: $box-shadow  
+    -o-box-shadow: $box-shadow 
+    box-shadow: $box-shadow  
+
+//traingle css
+=arrow-down($width, $style, $color)
+    border-top: $width $style $color
+    border-left: $width $style transparent
+    border-right: $width $style transparent
+    width: 0 !important
+    height: 0 !important
+
+=gradient ( $deg, $color1, $color2)
+    background: $color1
+    background: -webkit-linear-gradient($deg, $color1, $color2)
+    background: -moz-linear-gradient($deg, $color1, $color2)
+    background: linear-gradient($deg, $color1, $color2)
+
+=bg-gradient ( $deg, $color1, $ratio1, $color2, $ratio2)
+    background: $color1
+    background: -webkit-linear-gradient($deg, $color1 $ratio1, $color2 $ratio2)
+    background: -moz-linear-gradient($deg, $color1 $ratio1, $color2 $ratio2)
+    background: linear-gradient($deg, $color1 $ratio1, $color2 $ratio2)
+
+=placeholder-color($color) 
+    &::-webkit-input-placeholder //* WebKit browsers */
+        color: $color
+        opacity: 1
+    &:-moz-placeholder //* Mozilla Firefox 4 to 18 */
+        color: $color
+        opacity: 1
+    &::-moz-placeholder //* Mozilla Firefox 19+ */
+        color: $color
+        opacity: 1
+    &:-ms-input-placeholder //* Internet Explorer 10+ */
+        color: $color
+        opacity: 1
+
+//arrow without fill
+=angle($direction, $width, $height, $border, $color)
+    position: absolute
+    z-index: 11
+    display: block
+    width: $width
+    height: $height
+    @if $direction == down
+        border-top: $border solid $color
+        border-left: $border solid $color
+
+    @else if $direction == up
+        border-bottom: $border solid $color
+        border-right: $border solid $color
+        
+    @else if $direction == left
+        border-top: $border solid $color
+        border-right: $border solid $color
+
+//caret -arrow
+$cwidth : 30px
+$cheight : 15px
+$shadowColor: rgba(126, 126, 126, 0.6)
+=caret($direction, $width, $height, $color) 
+        width: 0
+        height: 0
+        border-left: $width/2 solid transparent
+        border-right: $width/2 solid transparent
+        border-top: $width/2 solid transparent
+        border-bottom: $width/2 solid transparent
+        @if $direction == up
+            border-bottom: $height solid $color
+            border-top: 0
+            
+        @else if $direction == down 
+            border-top: $height solid $color
+            border-bottom: 0
+
+        @else if $direction == left 
+            border-right: $height solid $color
+            border-left: 0
+
+        @else if $direction == right 
+            border-left: $height solid $color
+            border-right: 0
+
+//svg image mixins
+
+@mixin svg-color($color) 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210.843" height="140.837"><defs><linearGradient id="b" x1="-.137" y1=".499" x2="1.128" y2=".501" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#e3e3e3"/><stop offset="1" stop-color="#cfcdcd"/></linearGradient><clipPath id="a"><path data-name="Path 645" d="M-200.4 98.088c42.668-43.685 80.257 12.191 112.767 14.223s153.405-54.86 95.5 81.274-250.938-51.812-208.267-95.497z" transform="translate(179 -72)" fill="#a6f6ac"/></clipPath></defs><path data-name="Path 644" d="M6.105 16.646c42.668-43.685 80.257 12.191 112.767 14.223s153.405-54.86 95.5 81.274S-36.566 60.331 6.105 16.646z" fill="#c1ffc5"/><g data-name="Mask Group 15" clip-path="url(#a)" transform="translate(27.505 -9.442)"><path data-name="Rectangle 190" fill="#dedede" opacity=".21" d="M194.03 33.148l29.986 27.962L68.52 227.859l-29.986-27.962z"/><path data-name="Rectangle 193" fill="#dedede" opacity=".21" d="M90.647-79.97l42.898 35.996L-13.01 130.684-55.91 94.688z"/><path data-name="Rectangle 191" transform="rotate(43 96.97 147.277)" opacity=".21" fill="url(#b)" d="M0 0h41v228H0z"/><g data-name="Rectangle 192" fill="#d4d2d2" stroke="#{$color}" opacity=".21"><path stroke="none" d="M157.891-1.13l36.568 34.1L34.87 204.107l-36.568-34.1z"/><path fill="none" d="M157.916-.423l35.836 33.418L34.846 203.4-.99 169.982z"/></g></g></svg>')

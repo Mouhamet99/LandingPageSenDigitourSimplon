@@ -1,0 +1,63 @@
+// About image right alligned
+.about
+    @extend .spacing
+    .section-header 
+        margin-bottom: 20px
+    &__wrap 
+        @extend .display-flex
+        +flex-wrap(wrap)
+        .left-align &
+            +flex-direction(row-reverse)
+            +flex-wrap(wrap-reverse)
+        .right-align & 
+            +tablet-max 
+                +flex-direction(column-reverse)
+                
+    &__intro
+        -ms-flex: 0 0 100%
+        flex: 0 0 100%
+        max-width: 100%
+        +desktop-mini
+            -ms-flex: 0 0 58.333333%
+            flex: 0 0 58.333333%
+            max-width: 58.333333%
+        p 
+            margin-bottom: 0
+        a 
+            margin-top: 20px
+            +desktop-mini
+                margin-top: 30px
+        .right-align &
+            +desktop-mini
+                padding-right: 50px
+            +tablet-max 
+                margin: 30px 0 0 0
+            +mobile
+                margin: 20px 0 0 0
+        .left-align &
+            +desktop-mini
+                padding-left: 50px
+            +tablet-max 
+                margin: 30px 0 0 0
+            +mobile
+                margin: 20px 0 0 0
+            
+        ul 
+            margin-bottom: 30px
+    &__img 
+        -ms-flex: 0 0 100%
+        flex: 0 0 100%
+        max-width: 100%
+        +desktop-mini
+            -ms-flex: 0 0 41.666667%
+            flex: 0 0 41.666667%
+            max-width: 41.666667%
+        figure
+            margin: 0
+            @extend .text-right
+            +desktop-max
+                text-align: left
+            .left-align &
+                @extend .text-left
+            
+

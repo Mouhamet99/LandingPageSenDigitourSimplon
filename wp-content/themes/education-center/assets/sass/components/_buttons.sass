@@ -1,0 +1,117 @@
+.btn
+    font-size: 0.89rem
+    line-height: 25px
+    display: inline-block
+    @extend %relative
+    @extend %medium
+    padding: 18px 36px
+    box-sizing: inherit
+    vertical-align: middle
+    @extend .text-center
+    +transition(0.2s ease)
+    color: $color-white
+    @extend %capitalise
+    cursor: pointer
+    +mobile-sm-max 
+        width: 100%
+    +desktop-mini
+        font-size: 1rem
+    &:disabled[disabled]
+        cursor: not-allowed
+    &-primary
+        background: var(--ecp-primary-color-education)
+        border-color: var(--ecp-primary-color-education)
+        +border-radius(5px)
+        &:hover,
+        &:focus
+            background: var(--ecp-secondary-color-education)
+            border-color: var(--ecp-secondary-color-education)
+            color: $color-white
+    &-tertiary
+        background: var(--ecp-secondary-color-education)
+        border-color: var(--ecp-secondary-color-education)
+        +border-radius(5px)
+        &:hover,
+        &:focus
+            background: var(--ecp-primary-color-education)
+            border-color: var(--ecp-primary-color-education)
+            color: $color-white
+    &-link 
+        color: var(--ecp-primary-color-education)
+        @extend %primary-font-education
+        font-size: 14px
+        line-height: 20px 
+        border-bottom: 1px solid var(--ecp-primary-color-education)
+        @extend %regular
+        &:hover,
+        &:focus
+            color: var(--ecp-primary-color-education)
+            border-bottom: 1px solid var(--ecp-primary-color-education)
+        &--dark 
+            color: $color-black
+            border-color: $color-black
+            &:hover,
+            &:focus
+                color: var(--ecp-primary-color-education)
+                border-bottom: 1px solid var(--ecp-primary-color-education)
+            
+    &-sm 
+        padding: 8.5px 25px
+        font-size: 0.78rem
+        line-height: 1.5
+        +desktop-mini
+            padding: 8.5px 38px
+    &-lg
+        padding: 12px 25px
+        +desktop-mini 
+            padding: 15px 30px
+        +laptop
+            padding: 17.5px 40px                                  
+    &-arrow
+        background: url('./assets/img/right-arrow.png')
+        height: 13px
+        width: 13px
+        height: 12px
+        width: 14px
+        background-size: contain
+        background-repeat: no-repeat
+        margin-left: 15px
+        display: inline-block
+        &--dark 
+            background-image: url('./assets/img/right-arrow-dark.png')
+    &-wrap 
+        @extend .display-flex 
+        +flex-wrap(wrap)
+        +mobile-sm
+            +flex-wrap(nowrap)
+        a + a 
+            +mobile-sm-max
+                margin-top: 20px
+            +mobile-sm
+                margin-left: 20px
+        
+//Scroll Top button 
+#ecp-top 
+    display: none
+    padding: 0
+    visibility: visible
+    opacity: 1
+    position: fixed
+    bottom: 20px
+    right: 20px
+    width: 60px
+    height: 60px
+    background: rgba(0, 0, 0, 0.37)
+    color: #fff
+    cursor: pointer
+    @extend .text-center
+    line-height: 70px
+    +border-radius(100%)
+    z-index: 999
+    -webkit-transition: all ease 0.35s
+    -moz-transition: all ease 0.35s
+    transition: all ease 0.35s
+    svg 
+        width: 24px
+        height: 24px
+        margin-top: 18px

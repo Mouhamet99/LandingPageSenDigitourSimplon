@@ -1,0 +1,388 @@
+/* Widgets
+    --------------------------------------------- */
+.widget 
+	margin: 0 0 30px
+
+	+desktop-mini
+		margin: 0 0 35px
+	+laptop
+		margin: 0 0 50px
+
+	.widget-title 
+		font-size: 1.22rem 
+        line-heigth: 36px 
+        margin-bottom: 20px
+		color: $color-black
+		@extend %primary-font-education
+		@extend %medium
+		
+	.author_bio_holder 
+		@extend .text-center
+		padding: 29px 63px
+		border-radius: 16px
+		box-shadow: 0px 0px 10px rgba($color-black, $alpha: 0.1)
+
+		.title-holder 
+			font-size: 1.333rem
+			@extend %medium
+			padding-bottom: 20px
+		
+
+		.image-holder 
+			padding-bottom: 28px
+		
+
+		.author_bio_content 
+			font-size: 0.889rem
+			@extend %medium
+			color: #929497
+		
+
+		.author_bio_soclinks 
+			margin: 0
+			li 
+				display: inline-block
+				margin: 0 8px 8px 0
+
+				a 
+					&:hover 
+						path 
+							fill: var(--ecp-primary-color-education)
+						
+	 //bio holder
+
+	&.widget_social_feeds 
+		.social-links 
+			margin: 0
+			li 
+				color: #231f20
+				@extend %medium
+				font-size: 0.89rem
+				margin-bottom: 20px
+				padding: 8.5px 11px
+				box-shadow: 0 0 5px rgba($color-black, $alpha: 0.1)
+				transition: 0.2s ease all
+				border-radius: 15px
+
+				&:hover 
+					box-shadow: 0 5px 10px rgba($color-black, $alpha: 0.1)
+				
+				a 
+					@extend %inline-flex
+					+justify-content(center)
+					+align-items(center)
+					width: 43px
+					height: 43px
+					border-radius: 9px
+					margin-right: 17px
+					@extend .text-center
+					line-height: 43px
+
+					&.facebook 
+						background-color: $facebook-color
+					
+					&.twitter 
+						background-color: $twitter-color
+					
+					&.instagram 
+						background-color: $instagram-color
+					
+					&.pinterest 
+						background-color: $pintrest-color
+					
+				
+			
+		
+	 //end of social Feeds
+
+	&.widget_twitter_feed 
+		.twitter-feeds-main-wrap 
+			padding: 18px 28px 29px
+			border-radius: 16px
+			box-shadow: 0px 0px 10px rgba($color-black, $alpha: 0.1)
+			.twitter-feed-wrapper 
+				&:not(:last-of-type) 
+					border-bottom: 1px dashed #929497
+				
+			
+			.tweets-header 
+				font-size: 0.8889rem
+				@extend %medium
+				padding: 20px 0
+
+				p 
+					display: inline-block
+					margin-bottom: 0
+
+					a 
+						color: var(--glt-secondary-color)
+						font-style: italic
+					
+				 //end of p
+				.tweets-time 
+					@extend %primary-font-education
+					@extend %medium
+					font-size: 0.778rem
+
+					a 
+						color: #929497
+						@extend %medium
+						time 
+							@extend %medium 
+                
+	&.widget_search 
+		form,.search-form  
+			label 
+				display: none
+
+			input[type="search"] 
+                color: $text-gray
+                font-size: 14px
+                width: calc(100% - 67px)
+                background: $color-white
+                padding: 16.5px 29px
+                border: solid $gray-200
+                border-width: 1px 0 1px 1px
+                height: 60px
+                +border-radius(0)
+                border-top-left-radius: 5px
+                border-bottom-left-radius: 5px
+			
+			button.wp-block-search__button,input[type="submit"]
+                float: right
+                height: 60px
+                width: 67px
+                padding: 0
+                cursor: pointer
+                background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9399 20L16.4539 15.506L20.9399 20ZM18.9399 9.5C18.9399 11.7543 18.0444 13.9163 16.4503 15.5104C14.8563 17.1045 12.6943 18 10.4399 18C8.1856 18 6.02359 17.1045 4.42953 15.5104C2.83547 13.9163 1.93994 11.7543 1.93994 9.5C1.93994 7.24566 2.83547 5.08365 4.42953 3.48959C6.02359 1.89553 8.1856 1 10.4399 1C12.6943 1 14.8563 1.89553 16.4503 3.48959C18.0444 5.08365 18.9399 7.24566 18.9399 9.5V9.5Z' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A")
+                background-repeat: no-repeat
+                background-position: center
+                background-size: 23px
+                font-size: 0
+                border: solid $gray-200
+                border-width: 1px 1px 1px 0
+                +border-radius(0)
+                border-top-right-radius: 5px
+                border-bottom-right-radius: 5px
+                background-color: $color-white
+
+
+	&.widget_recent_entries ,.wp-block-latest-posts__list //Latest posts sections
+		li
+			font-size: 0.89rem
+			padding-left: 0 !important
+			&:before 
+				display: none 
+			&:not(:last-child) 
+				border-bottom: 1px solid $border-color
+				padding-bottom: 20px
+			.wp-block-latest-posts__featured-image ,
+			.wp-block-latest-posts__featured-image a
+				width: 80px
+				height: 80px
+				margin-right: 20px
+				a 
+					display: block
+				img 
+					width: 100%
+					+border-radius(50%)
+					height: 100%
+					object-fit: cover
+			
+				
+			a 
+				font-size: 0.89rem	
+			.wp-block-latest-posts__post-author, .wp-block-latest-posts__post-date
+				font-size: 14px 
+				@exetnd %medium
+				color: var(--ecp-primary-color-education)
+
+    &.widget_categories 
+		ul 
+			@extend %primary-font-education
+			margin: 0
+			font-size: 0.89rem
+			@extend %medium 
+			li 
+				@extend .list-disc
+
+				a 
+					font-size: 0.89rem
+					@extend %regular
+					&:hover 
+						color: var(--ecp-primary-color-education)
+	ul.wp-block-categories-list
+		@extend %primary-font-education
+		margin: 0
+		font-size: 0.89rem
+		@extend %medium 
+		li 
+			@extend .list-disc
+
+			a 
+				font-size: 0.89rem
+				@extend %regular
+				&:hover 
+					color: var(--ecp-primary-color-education)
+	.wp-block-categories-dropdown
+		select 
+			background: $gray-100
+			font-size: 14px 
+			border: 1px solid $gray-100
+			+border-radius(5px)
+			padding: 10px 20px
+			width: 100%
+	//Tags
+	.wp-block-tag-cloud
+		margin-bottom: 0
+		.tag-cloud-link
+			@extend .tag__plan
+			font-size: 0.89rem !important
+			color: $color-black
+			background-color: rgba(55, 126, 249, 0.1)
+			margin: 0 5px 5px 0
+			@extend %regular
+
+	//Calender 
+	.wp-block-calendar 
+		table 
+			border-collapse: collapse
+			margin-bottom: 0
+			caption 
+				margin-bottom: 10px
+			
+			thead tr th,
+			tbody tr td 
+				border: 1px solid $border-color
+			th 
+				background: rgba(55, 126, 249, 0.1)
+				@extend .text-center
+		tbody 
+			tr 
+				@extend .text-center
+			
+		.wp-calendar-nav 
+			border-top: 0 !important
+			border: 1px solid $border-color
+			@extend .display-flex
+			+align-items(center)
+			+justify-content(center)
+			.wp-calendar-nav-prev,
+			.wp-calendar-nav-next 
+				width: 45%
+				padding: 0 5px
+			
+			.wp-calendar-nav-prev 
+				border-right: 1px solid $border-color
+			
+			.wp-calendar-nav-next 
+				float: right
+				text-align: right
+				border-left: 1px solid $border-color
+			
+			.pad 
+				width: 15%
+	
+	//Comments
+	.wp-block-latest-comments
+		margin-bottom: 0
+		.avatar 
+			+border-radius(50%)
+			margin-right: 20px
+			height: 60px
+			width: 60px
+			+laptop
+				height: 80px
+				width: 80px
+		.wp-block-latest-comments__comment
+			margin-bottom: 20px
+			line-height: 1.78
+			color: $color-black
+			a 
+				color: $color-black
+				font-size: 0.89rem
+			&:last-child 
+				margin-bottom: 0
+			&:not(last-child)
+				padding-bottom: 20px 
+				border-bottom: 1px solid #EFEFEF
+			p 
+				margin-bottom: 0
+	.has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt, .has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-meta
+		margin-left: 70px
+		font-size: 0.89rem
+		+laptop
+			margin-left: 100px
+		a 
+			color: $color-black
+	
+	//products list 
+	.product_list_widget
+		li 
+			&:not(:last-child) 
+				padding-bottom: 20px
+			.product-title 
+				@extend %regular 
+				color: $color-black
+			del,ins 
+				font-size: 0.89rem
+	&.woocommerce ul.cart_list li img, &.woocommerce ul.product_list_widget li img,&.woocommerce ul.product_list_widget li a
+		+border-radius(50%)
+		margin-left: 0
+		margin-right: 20px 
+		float: left
+
+	//Image 
+	&.widget_media_image
+		border: none 
+		padding: 0
+		figure 
+			margin: 0
+	
+	//Twitter embed 
+	figure.wp-block-embed
+		margin: 0
+	 
+	//Social links 
+	.wp-block-social-links
+		li.wp-social-link 
+			&:not(:last-child) 
+				margin: 4px 8px 4px 0 !important
+			a 
+				svg 
+					fill: $color-white
+
+	//Archive 
+	.wp-block-archives-list 
+		li 
+			@extend .list-disc
+
+
+#secondary 
+	.widget
+		padding: 30px 25px
+		+border-radius(5px)
+		border: 1px solid $gray-200
+		h2,&-title 
+			font-size: 1.22rem 
+			line-heigth: 36px 
+			margin-bottom: 20px
+
+		&.widget_pages,
+		&.widget_meta,
+		&.widget_recent_comments,
+		&.widget_recent_entries,
+		&.widget_rss ,
+		&.widget_block
+			ul 
+				margin: 0
+				li
+					&:not(:last-child) 
+						margin-bottom: 20px
+
+					a
+						font-size: 0.89rem
+						color: $color-black
+						&:hover 
+							color: var(--ecp-primary-color-education)
+        

@@ -1,0 +1,145 @@
+.f-course
+    padding-top: 20px
+    +tablet
+        padding-top: 25px
+    +desktop-mini
+        padding-top: 35px
+    +laptop
+        padding-top: 50px
+    .f-grid 
+        .grid 
+            @extend %flexbox
+            @include flex-wrap(wrap)
+            margin: 15px -15px 0 -15px
+            +laptop
+                margin: 35px -25px 0 -25px
+
+            .f-wrap 
+                padding: 10px 15px
+                margin-bottom: 10px
+                width: 100%
+                overflow: hidden
+                +tablet 
+                    width: 50%
+                +desktop-mini 
+                    width: 33.33%
+                +laptop
+                    padding: 15px 25px
+                    margin-bottom: 35px
+                &__content
+                    position: relative
+                    +box-shadow( 0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+                    img
+                        width: 100%
+                &__bottom 
+                    border-top: 1px solid $border-color
+                    padding: 12px 30px
+                    @extend .display-flex
+                    +justify-content(space-between)
+                    .btn-lnk
+                        color: var(--ecp-primary-color-education)
+                        &:hover 
+                            var(--ecp-secondary-color-education)
+                &__price
+                    font-size: 1.22rem
+                    color: var(--ecp-primary-color-education)
+                    line-height: 1
+                     
+            .f-info
+                padding: 20px
+                background: $color-white
+                +tablet
+                    padding: 30px 35px
+                .category-list
+                    font-size: 0
+                    margin-bottom: 10px
+                    a 
+                        @extend %relative
+                        &:before 
+                            @extend %absolute
+                            content: '-';
+                            top: 50%
+                            +transform(translateY(-50%))
+                            left: -4px
+                .f-writer 
+                    a 
+                        color: $text-gray              
+                h3 
+                    font-size: 1.22rem
+                    line-height: 1.89rem
+                    @extend %medium
+                    margin: 10px 0
+                    +desktop-mini 
+                        font-size: 1.44rem
+                        line-height: 2rem
+                    a 
+                        color: $color-black
+                        &:hover
+                            color: var(--ecp-primary-color-education)
+
+.filters 
+    .button-group,ul
+        @extend .display-flex
+        +justify-content(center)
+        +align-items(center)
+        +flex-wrap(wrap)
+        +tablet
+            margin: 0 -20px
+        button.button, li
+            @extend %primary-font-education
+            font-size: 1rem
+            line-height: 1.2s
+            margin: 8px 10px
+            cursor: pointer
+            +transition(0.05s ease all)
+            border: 1px solid rgba(55, 126, 249, 0.06)
+            +box-shadow( 0px 0px 5px 1px rgba(0, 0, 0, 0.12))
+            background: $color-white
+            +border-radius(5px)
+            color: $color-black
+            padding: 8px 15px
+            +desktop-mini
+                margin: 10px 20px
+                padding: 10px 20px
+            +mobile-sm-max 
+                width: auto
+                font-size: 0.89rem
+            &.is-checked,
+            &:hover 
+                color: var(--ecp-primary-color-education)
+                background-color: rgba(55, 126, 249, 0.06)
+            
+        //endofli
+    .filters--block 
+        ul
+            +box-shadow( 6px 5px 7px 1px rgba(0, 0, 0, 0.15))
+            +border-radius(10px)
+            margin: 0
+            +tablet
+                margin: 0 20px
+            button.button, li
+                +box-shadow( none )
+                @extend %relative
+                border: none
+                padding: 10px 15px
+                margin: 0
+                @extend %capitalise
+                +mobile-sm 
+                    padding: 10px 20px
+                +laptop
+                    padding: 20px 30px
+                &:hover,&.is-checked 
+                    background-color: transparent 
+                &:nth-child(1)
+                    &:before
+                        display: none
+                &:before
+                    @extend %absolute 
+                    @extend %content 
+                    height: 20px
+                    width: 1px 
+                    background-color: $text-gray
+                    left: 0 
+                    top: 50%
+                    +transform(translatey(-50%))
+//filterbuttons
